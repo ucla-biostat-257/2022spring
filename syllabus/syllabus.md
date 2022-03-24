@@ -24,7 +24,7 @@ Office hours: Tue/Thu 3pm-4pm, in office and Zoom <https://ucla.zoom.us/j/962344
 
 ### Teaching Assistant
 
-Mitchell Schepps: <maschepps@ucla.edu>
+Mitchell Schepps: <maschepps@ucla.edu>  
 Office hours: ??? @ Zoom <https://ucla.zoom.us/j/96234404896>  
 
 ### Course Topics
