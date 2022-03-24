@@ -13100,7 +13100,7 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="BIOSTAT-257:-Statistical-Computing">BIOSTAT 257: Statistical Computing<a class="anchor-link" href="#BIOSTAT-257:-Statistical-Computing">&#182;</a></h1><ul>
-<li>Tue/Thu 1pm-2:50pm @ Zoom <a href="https://ucla.zoom.us/j/97491444804">https://ucla.zoom.us/j/97491444804</a>  </li>
+<li>Tue/Thu 1pm-2:50pm @ CHS 33-105A  </li>
 <li>Instructor: Dr. Hua Zhou, <a href="mailto:huazhou@ucla.edu">huazhou@ucla.edu</a></li>
 </ul>
 
@@ -13140,7 +13140,7 @@ $( document ).ready(function(){
 <li><p><strong>Not</strong> a pure programming course, although programming is important and we do homework in Julia.<br>
 BIOSTAT 203A (Data Management) in fall quarter focuses on programming in R and SAS.</p>
 </li>
-<li><p><strong>Not</strong> a course on data science. <a href="https://ucla-biostat203b-2021winter.github.io/schedule.html">BIOSTAT 203B (Introduction to Data Science)</a> in winter quarter focuses on some software tools for data scientists.</p>
+<li><p><strong>Not</strong> a course on data science. <a href="https://ucla-biostat-203b.github.io/2022winter/schedule/schedule.html">BIOSTAT 203B (Introduction to Data Science)</a> in winter quarter focuses on some software tools for data scientists.</p>
 </li>
 <li><p>This course focuses on <strong>algorithms</strong>, mostly those in <strong>numerical linear algebra</strong> and <strong>numerical optimization</strong>.</p>
 </li>
@@ -13156,16 +13156,16 @@ BIOSTAT 203A (Data Management) in fall quarter focuses on programming in R and S
 <li><p>Be highly appreciative of this quote by <a href="https://books.google.com/books?id=Pbz3D7Tg5eoC&amp;pg=PR9&amp;lpg=PR9&amp;dq=The+form+of+a+mathematical+expression+and+the+way+the+expression+should+be+evaluated+in+actual+practice+may+be+quite+different.&amp;source=bl&amp;ots=MYABVAwDtC&amp;sig=MGuPY_171sZFZLMCuewlOjV-Cl4&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwjkv_u34v7SAhUJrlQKHfT6DjAQ6AEIITAB#v=onepage&amp;q=The%20form%20of%20a%20mathematical%20expression%20and%20the%20way%20the%20expression%20should%20be%20evaluated%20in%20actual%20practice%20may%20be%20quite%20different.&amp;f=false">James Gentle</a></p>
 <blockquote><p>The form of a mathematical expression and the way the expression should be evaluated in actual practice may be quite different.</p>
 </blockquote>
-<p>Examples: $\boldsymbol{X}^T \boldsymbol{W} \boldsymbol{X}$, $\operatorname{tr} (\boldsymbol{A} \boldsymbol{B})$, $\operatorname{diag}(\boldsymbol{A} \boldsymbol{B})$, multivariate normal density,...</p>
+<p>Examples: $\mathbf{X}^T \mathbf{W} \mathbf{X}$, $\operatorname{tr} (\mathbf{A} \mathbf{B})$, $\operatorname{diag}(\mathbf{A} \mathbf{B})$, multivariate normal density,...</p>
 </li>
 <li><p>Become <strong>memory-conscious</strong>. You care about looping order. You do benchmarking on hot functions fanatically to make sure it's not allocating.<br>
-<img src="./memory.jpg" align="center" width="150"/><br>
-Image source: <a href="https://www.independent.co.uk/news/health/memory-loss-alzheimers-disease-age-of-8-university-college-london-a9178631.html">https://www.independent.co.uk/news/health/memory-loss-alzheimers-disease-age-of-8-university-college-london-a9178631.html</a></p>
+<img src="./memory.jpg" align="center" width="150"/></p>
+<p><a href="https://www.independent.co.uk/news/health/memory-loss-alzheimers-disease-age-of-8-university-college-london-a9178631.html">Image source</a></p>
 </li>
-<li><p><strong>No inversion mentality</strong>. Whenever you see a matrix inverse in mathematical expression, your brain reacts with <em>matrix decomposition</em>, <em>iterative solvers</em>, etc. For R users, that means you almost never use the <code>solve()</code> function.</p>
-<p>Examples: $(\boldsymbol{X}^T \boldsymbol{X})^{-1} \boldsymbol{X}^T \mathbf{y}$, $\mathbf{y}^T \boldsymbol{\Sigma}^{-1} \mathbf{y}$, Newton-Raphson algorithm, ...<br>
-<img src="./yoga_inversion.jpg" align="center" width="250"/><br>
-Image source: <a href="https://www.yogajournal.com/practice/inversion-inquiry">https://www.yogajournal.com/practice/inversion-inquiry</a></p>
+<li><p><strong>No inversion mentality</strong>. Whenever you see a matrix inverse in mathematical expression, your brain reacts with <em>matrix decomposition</em>, <em>iterative solvers</em>, etc. For R users, that means you almost never use the <code>solve(M)</code> function to obtain inverse of a matrix $\boldsymbol{M}$.</p>
+<p>Examples: $(\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}$, $\mathbf{y}^T \boldsymbol{\Sigma}^{-1} \mathbf{y}$, Newton-Raphson algorithm, ...<br>
+<img src="./yoga_inversion.jpg" align="center" width="250"/></p>
+<p><a href="https://www.yogajournal.com/practice/inversion-inquiry">Image source</a></p>
 </li>
 <li><p>Know some basic strategies to solve <strong>big data</strong> problems.</p>
 <p>Examples: how Google solve the PageRank problem with $10^{9}$ webpages, linear regression with $10^7$ observations, etc.</p>
@@ -13183,15 +13183,57 @@ Image source: <a href="https://www.yogajournal.com/practice/inversion-inquiry">h
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Course-logistics">Course logistics<a class="anchor-link" href="#Course-logistics">&#182;</a></h2><ul>
-<li><p>Course webpage: <a href="https://ucla-biostat-257-2021spring.github.io">https://ucla-biostat-257-2021spring.github.io</a> or <a href="http://ucla-biostat-257.com">http://ucla-biostat-257.com</a>.</p>
+<li><p>Course webpage: <a href="https://ucla-biostat-203b.github.io/2022winter">https://ucla-biostat-203b.github.io/2022winter</a> or <a href="http://ucla-biostat-257.com">http://ucla-biostat-257.com</a>.</p>
 </li>
-<li><p><a href="https://ucla-biostat-257-2021spring.github.io/syllabus/syllabus.html">Syllabus</a>.</p>
+<li><p><a href="https://ucla-biostat-203b.github.io/2022winter/syllabus/syllabus.html">Syllabus</a>.</p>
 </li>
-<li><p>Check the <a href="https://ucla-biostat-257-2021spring.github.io/schedule/schedule.html">Schedule</a> and <a href="https://ucla-biostat-257-2021spring.github.io/announcement.html">Announcements</a> pages frequently.</p>
+<li><p>Check the <a href="https://ucla-biostat-203b.github.io/2022winter/schedule/schedule.html">Schedule</a> page frequently.</p>
 </li>
-<li><p>Jupyter notebooks will be posted before each lecture.</p>
+<li><p>Jupyter notebooks will be posted/updated before each lecture.</p>
 </li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-to-get-started">How to get started<a class="anchor-link" href="#How-to-get-started">&#182;</a></h2><p>All course materials are in GitHub repo <a href="https://github.com/ucla-biostat-257/2022spring">https://github.com/ucla-biostat-257/2022spring</a>. Lecture notes are Jupyter Notebooks (<code>.ipynb</code> files) under the <code>slides</code> folder. It is a good idea to learn by running through the code examples. You can do this in several ways.</p>
+<h3 id="Run-Jupyter-Notebook-in-Binder">Run Jupyter Notebook in Binder<a class="anchor-link" href="#Run-Jupyter-Notebook-in-Binder">&#182;</a></h3><p>A quick and easy way to run the Jupyter Notebooks is Binder, a free service that allows us to run Jupyter Notebooks in cloud. Simply follow the Binder link at <a href="https://ucla-biostat-257.github.io/2022spring/schedule/schedule.html">https://ucla-biostat-257.github.io/2022spring/schedule/schedule.html</a>.</p>
+<p>If you want the JupyterLab interface, replace the <code>tree</code> by <code>lab</code> in the URL.</p>
+<h3 id="Run-Jupyter-Notebook-locally-on-your-own-computer">Run Jupyter Notebook locally on your own computer<a class="anchor-link" href="#Run-Jupyter-Notebook-locally-on-your-own-computer">&#182;</a></h3><ol>
+<li><p>Download and install Julia v1.7.2 from <a href="https://julialang.org/downloads/">https://julialang.org/downloads/</a>. On Mac, use Bash command</p>
+<div class="highlight"><pre><span></span>sudo ln -s /Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
+</pre></div>
+<p>to create a symbolic link so <code>julia</code> command is available anywhere in the terminal.</p>
+</li>
+<li><p>Git clone the course material.</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/ucla-biostat-257/2022spring.git biostat-257-2022spring
+</pre></div>
+<p>You can change <code>biostat-257-2022spring</code> to another directory name you prefer.</p>
+</li>
+<li><p>Enter the folder <code>biostat-257-2022spring</code> on Terminal.</p>
+</li>
+<li><p>Open Julia within that folder, type <code>]</code> to enter the package mode, then type</p>
+<div class="highlight"><pre><span></span><span class="n">activate</span> <span class="o">.</span>
+<span class="n">instantiate</span>
+</pre></div>
+<p>to install necessary packages.</p>
+</li>
+<li><p>In Julia REPL, type</p>
+<div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">IJulia</span>
+<span class="n">jupyterlab</span><span class="p">(</span><span class="n">dir</span> <span class="o">=</span> <span class="n">pwd</span><span class="p">())</span>
+</pre></div>
+<p>to open the JupyterLab in browser or</p>
+<div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">IJulia</span>
+<span class="n">notebook</span><span class="p">(</span><span class="n">dir</span> <span class="o">=</span> <span class="n">pwd</span><span class="p">())</span>
+</pre></div>
+<p>to open a Jupyter notebook.</p>
+</li>
+<li><p>Course material is updated frequently. Remember to <code>git pull</code> to obtain the most recent material.</p>
+</li>
+</ol>
 
 </div>
 </div>

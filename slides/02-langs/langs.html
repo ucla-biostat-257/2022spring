@@ -13099,7 +13099,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Computer-Languages-(R,-Python,-Julia,-C)">Computer Languages (R, Python, Julia, C)<a class="anchor-link" href="#Computer-Languages-(R,-Python,-Julia,-C)">&#182;</a></h1><p>System information (for reproducibility)</p>
+<h1 id="Computer-Languages-(R,-Python,-Julia,-C/C++)">Computer Languages (R, Python, Julia, C/C++)<a class="anchor-link" href="#Computer-Languages-(R,-Python,-Julia,-C/C++)">&#182;</a></h1><p>System information (for reproducibility)</p>
 
 </div>
 </div>
@@ -13126,14 +13126,14 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Julia Version 1.6.0
-Commit f9720dc2eb (2021-03-24 12:55 UTC)
+<pre>Julia Version 1.7.1
+Commit ac5cc99908 (2021-12-22 19:35 UTC)
 Platform Info:
-  OS: macOS (x86_64-apple-darwin19.6.0)
+  OS: macOS (x86_64-apple-darwin19.5.0)
   CPU: Intel(R) Core(TM) i7-6920HQ CPU @ 2.90GHz
   WORD_SIZE: 64
   LIBM: libopenlibm
-  LLVM: libLLVM-11.0.1 (ORCJIT, skylake)
+  LLVM: libLLVM-12.0.1 (ORCJIT, skylake)
 Environment:
   JULIA_EDITOR = code
   JULIA_NUM_THREADS = 4
@@ -13141,6 +13141,20 @@ Environment:
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># load packages</span>
+<span class="k">using</span> <span class="n">BenchmarkTools</span><span class="p">,</span> <span class="n">Distributions</span><span class="p">,</span> <span class="n">Libdl</span><span class="p">,</span> <span class="n">PyCall</span><span class="p">,</span> <span class="n">Random</span><span class="p">,</span> <span class="n">RCall</span><span class="p">,</span> <span class="n">Statistics</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -13177,7 +13191,7 @@ Environment:
 <ul>
 <li>Data analysis <em>never</em> happens if we do not know how to retrieve data from databases  </li>
 </ul>
-<p><a href="https://ucla-biostat203b-2021winter.github.io/schedule.html">203B (Introduction to Data Science)</a> covers some basics on scripting and database.</p>
+<p><a href="https://ucla-biostat-203b.github.io/2022winter/schedule/schedule.html">203B (Introduction to Data Science)</a> covers some basics on scripting and database.</p>
 </li>
 </ul>
 
@@ -13187,7 +13201,8 @@ Environment:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-high-level-languages-work?">How high-level languages work?<a class="anchor-link" href="#How-high-level-languages-work?">&#182;</a></h2><ul>
+<h2 id="How-high-level-languages-work?">How high-level languages work?<a class="anchor-link" href="#How-high-level-languages-work?">&#182;</a></h2><p>Comics: <a href="https://betterprogramming.pub/the-life-of-a-bytecode-language-fca666928e7b">The Life of a Bytecode Language</a></p>
+<ul>
 <li>Typical execution of a high-level language such as R, Python, and Matlab.</li>
 </ul>
 <p><img src="./r-bytecode.png" align="center" width="400"/></p>
@@ -13260,12 +13275,10 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">RCall</span>
-
-<span class="c"># show R information</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># show R information</span>
 <span class="n">R</span><span class="s">&quot;&quot;&quot;</span>
 <span class="s">sessionInfo()</span>
 <span class="s">&quot;&quot;&quot;</span>
@@ -13281,19 +13294,20 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>RObject{VecSxp}
-R version 4.0.3 (2020-10-10)
+R version 4.1.2 (2021-11-01)
 Platform: x86_64-apple-darwin17.0 (64-bit)
 Running under: macOS Big Sur 10.16
 
 Matrix products: default
-LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+BLAS:   /Applications/Julia-1.7.app/Contents/Resources/julia/lib/julia/libblastrampoline.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -13302,7 +13316,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 loaded via a namespace (and not attached):
-[1] compiler_4.0.3
+[1] compiler_4.1.2
 </pre>
 </div>
 
@@ -13314,7 +13328,7 @@ loaded via a namespace (and not attached):
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># define a function for Gibbs sampling</span>
@@ -13347,7 +13361,7 @@ loaded via a namespace (and not attached):
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13386,7 +13400,7 @@ function (N, thin)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">R</span><span class="s">&quot;&quot;&quot;</span>
@@ -13404,7 +13418,7 @@ function (N, thin)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13412,7 +13426,7 @@ function (N, thin)
 <div class="output_text output_subarea output_execute_result">
 <pre>RObject{RealSxp}
    user  system elapsed 
- 22.429   1.954  24.562 
+ 22.384   1.678  24.168 
 </pre>
 </div>
 
@@ -13434,12 +13448,10 @@ function (N, thin)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Distributions</span>
-
-<span class="k">function</span> <span class="n">jgibbs</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">thin</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">jgibbs</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">thin</span><span class="p">)</span>
     <span class="n">mat</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="kp">in</span> <span class="mi">1</span><span class="o">:</span><span class="n">N</span>
@@ -13464,7 +13476,7 @@ function (N, thin)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13489,7 +13501,7 @@ function (N, thin)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">jgibbs</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="c"># warm-up</span>
@@ -13506,13 +13518,13 @@ function (N, thin)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.346444283</pre>
+<pre>0.278172357</pre>
 </div>
 
 </div>
@@ -13540,11 +13552,10 @@ function (N, thin)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Random</span> <span class="c"># standard library</span>
-<span class="n">Random</span><span class="o">.</span><span class="n">seed!</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span> <span class="c"># seed</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">Random</span><span class="o">.</span><span class="n">seed!</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span> <span class="c"># seed</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)</span> <span class="c"># 1 million random numbers in [0, 1)</span>
 <span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
@@ -13559,13 +13570,13 @@ function (N, thin)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>500060.34072352527</pre>
+<pre>500220.6882968192</pre>
 </div>
 
 </div>
@@ -13581,19 +13592,6 @@ function (N, thin)
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">BenchmarkTools</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13684,7 +13682,7 @@ function (N, thin)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>500060.340723512</pre>
+<pre>500220.6882968189</pre>
 </div>
 
 </div>
@@ -13698,7 +13696,8 @@ function (N, thin)
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">bm</span> <span class="o">=</span> <span class="nd">@benchmark</span> <span class="n">c_sum</span><span class="p">(</span><span class="o">$</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># dollar sign to interpolate array x into local scope for benchmarking</span>
+<span class="n">bm</span> <span class="o">=</span> <span class="nd">@benchmark</span> <span class="n">c_sum</span><span class="p">(</span><span class="o">$</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13717,17 +13716,16 @@ function (N, thin)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  0 bytes
-  allocs estimate:  0
-  --------------
-  minimum time:     1.156 ms (0.00% GC)
-  median time:      1.193 ms (0.00% GC)
-  mean time:        1.220 ms (0.00% GC)
-  maximum time:     1.936 ms (0.00% GC)
-  --------------
-  samples:          4094
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 4121 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">1.128 ms</span> … <span class="ansi-magenta-fg"> 1.727 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">1.183 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">1.208 ms</span> ± <span class="ansi-green-fg">64.200 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+       ▂█▆▃<span class="ansi-blue-fg"> </span>   <span class="ansi-green-fg"> </span>                                              
+  ▃▃▂▂▂████<span class="ansi-blue-fg">▆</span>▄▅▆<span class="ansi-green-fg">▆</span>▅▆▅▅▄▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▂▂▂ ▃
+  1.13 ms<span class="ansi-black-intense-fg">        Histogram: frequency by time</span>        1.48 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">0 bytes</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">0</span>.</pre>
 </div>
 
 </div>
@@ -13741,8 +13739,7 @@ function (N, thin)
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Statistics</span> <span class="c"># standard library</span>
-<span class="n">benchmark_result</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">()</span> <span class="c"># a dictionary to store median runtime (in milliseconds)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">benchmark_result</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">()</span> <span class="c"># a dictionary to store median runtime (in milliseconds)</span>
 
 <span class="c"># store median runtime (in milliseconds)</span>
 <span class="n">benchmark_result</span><span class="p">[</span><span class="s">&quot;C&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">median</span><span class="p">(</span><span class="n">bm</span><span class="o">.</span><span class="n">times</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span>
@@ -13764,7 +13761,7 @@ function (N, thin)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.1933465</pre>
+<pre>1.183365</pre>
 </div>
 
 </div>
@@ -13786,9 +13783,7 @@ function (N, thin)
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">RCall</span>
-
-<span class="n">R</span><span class="s">&quot;&quot;&quot;</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">R</span><span class="s">&quot;&quot;&quot;</span>
 <span class="s">library(bench)</span>
 <span class="s">y &lt;- </span><span class="si">$x</span><span class="s"></span>
 <span class="s">rbm_builtin &lt;- bench::mark(sum(y))</span>
@@ -13812,10 +13807,10 @@ function (N, thin)
 
 <div class="output_text output_subarea output_execute_result">
 <pre>RObject{VecSxp}
-# A tibble: 1 x 13
-  expression   min median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
-  &lt;bch:expr&gt; &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;   &lt;bch:tm&gt;
-1 sum(y)     911µs  962µs     1027.        0B        0   514     0      500ms
+# A tibble: 1 × 13
+  expression      min median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
+  &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;   &lt;bch:tm&gt;
+1 sum(y)        2.3ms 2.47ms      405.        0B        0   203     0      502ms
 # … with 4 more variables: result &lt;list&gt;, memory &lt;list&gt;, time &lt;list&gt;, gc &lt;list&gt;
 </pre>
 </div>
@@ -13852,7 +13847,7 @@ function (N, thin)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.9619170000121358</pre>
+<pre>2.4676880001379686</pre>
 </div>
 
 </div>
@@ -13874,9 +13869,7 @@ function (N, thin)
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">RCall</span>
-
-<span class="n">R</span><span class="s">&quot;&quot;&quot;</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">R</span><span class="s">&quot;&quot;&quot;</span>
 <span class="s">sum_r &lt;- function(x) {</span>
 <span class="s">  s &lt;- 0</span>
 <span class="s">  for (xi in x) {</span>
@@ -13907,10 +13900,10 @@ function (N, thin)
 
 <div class="output_text output_subarea output_execute_result">
 <pre>RObject{VecSxp}
-# A tibble: 1 x 13
-  expression    min median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
-  &lt;bch:expr&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;   &lt;bch:tm&gt;
-1 sum_r(y)   14.9ms 15.1ms      65.4    12.7KB        0    33     0      505ms
+# A tibble: 1 × 13
+  expression      min median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
+  &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;   &lt;bch:tm&gt;
+1 sum_r(y)     12.8ms   13ms      76.5    12.7KB        0    39     0      510ms
 # … with 4 more variables: result &lt;list&gt;, memory &lt;list&gt;, time &lt;list&gt;, gc &lt;list&gt;
 </pre>
 </div>
@@ -13947,7 +13940,7 @@ function (N, thin)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>15.061760999998342</pre>
+<pre>13.009848000137936</pre>
 </div>
 
 </div>
@@ -13994,22 +13987,6 @@ function (N, thin)
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>In file included from file10f9c1dc78369.cpp:1:
-In file included from /Library/Frameworks/R.framework/Versions/4.0/Resources/library/Rcpp/include/Rcpp.h:57:
-/Library/Frameworks/R.framework/Versions/4.0/Resources/library/Rcpp/include/Rcpp/DataFrame.h:136:18: warning: unused variable &#39;data&#39; [-Wunused-variable]
-            SEXP data = Parent::get__();
-                 ^
-1 warning generated.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
     <div class="prompt output_prompt">Out[17]:</div>
 
 
@@ -14018,7 +13995,7 @@ In file included from /Library/Frameworks/R.framework/Versions/4.0/Resources/lib
 <div class="output_text output_subarea output_execute_result">
 <pre>RObject{ClosSxp}
 function (x) 
-.Call(&lt;pointer: 0x148f54c00&gt;, x)
+.Call(&lt;pointer: 0x11e6d0980&gt;, x)
 </pre>
 </div>
 
@@ -14055,10 +14032,10 @@ function (x)
 
 <div class="output_text output_subarea output_execute_result">
 <pre>RObject{VecSxp}
-# A tibble: 1 x 13
-  expression     min median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
-  &lt;bch:expr&gt;  &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;   &lt;bch:tm&gt;
-1 rcpp_sum(y) 1.16ms 1.18ms      822.    2.49KB        0   411     0      500ms
+# A tibble: 1 × 13
+  expression      min median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
+  &lt;bch:expr&gt;  &lt;bch:t&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;   &lt;bch:tm&gt;
+1 rcpp_sum(y)  1.16ms 1.21ms      808.    2.49KB        0   405     0      501ms
 # … with 4 more variables: result &lt;list&gt;, memory &lt;list&gt;, time &lt;list&gt;, gc &lt;list&gt;
 </pre>
 </div>
@@ -14095,7 +14072,7 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.1809470000230249</pre>
+<pre>1.2130129999832207</pre>
 </div>
 
 </div>
@@ -14117,8 +14094,7 @@ function (x)
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">PyCall</span>
-<span class="n">PyCall</span><span class="o">.</span><span class="n">pyversion</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">PyCall</span><span class="o">.</span><span class="n">pyversion</span>
 </pre></div>
 
     </div>
@@ -14172,17 +14148,16 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  336 bytes
-  allocs estimate:  6
-  --------------
-  minimum time:     72.919 ms (0.00% GC)
-  median time:      74.630 ms (0.00% GC)
-  mean time:        76.239 ms (0.00% GC)
-  maximum time:     125.896 ms (0.00% GC)
-  --------------
-  samples:          66
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 67 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">73.561 ms</span> … <span class="ansi-magenta-fg">84.218 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">75.373 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">75.705 ms</span> ± <span class="ansi-green-fg"> 1.583 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+              ▃ █▁█<span class="ansi-blue-fg">█</span>▁▃<span class="ansi-green-fg"> </span>                                        
+  ▄▄▄▇▁▄▄▁▇▄▄▄█▇███<span class="ansi-blue-fg">█</span>██<span class="ansi-green-fg">▇</span>▇▇▁▁▁▁▄▄▄▁▇▇▄▄▄▁▁▄▁▁▄▁▁▁▁▁▁▁▁▁▁▁▁▁▁▄▁▄ ▁
+  73.6 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>        79.8 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">240 bytes</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">6</span>.</pre>
 </div>
 
 </div>
@@ -14216,7 +14191,7 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>74.629914</pre>
+<pre>75.373378</pre>
 </div>
 
 </div>
@@ -14237,9 +14212,7 @@ function (x)
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">PyCall</span>
-
-<span class="n">py</span><span class="s">&quot;&quot;&quot;</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">py</span><span class="s">&quot;&quot;&quot;</span>
 <span class="s">def py_sum(A):</span>
 <span class="s">    s = 0.0</span>
 <span class="s">    for a in A:</span>
@@ -14268,17 +14241,16 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  336 bytes
-  allocs estimate:  6
-  --------------
-  minimum time:     93.464 ms (0.00% GC)
-  median time:      96.607 ms (0.00% GC)
-  mean time:        97.592 ms (0.00% GC)
-  maximum time:     111.281 ms (0.00% GC)
-  --------------
-  samples:          52
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 50 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold"> 93.824 ms</span> … <span class="ansi-magenta-fg">170.494 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold"> 98.450 ms               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">101.546 ms</span> ± <span class="ansi-green-fg"> 11.700 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+   ▄██<span class="ansi-blue-fg">▁</span>▁<span class="ansi-green-fg"> </span>                                                        
+  ▃███<span class="ansi-blue-fg">█</span>█<span class="ansi-green-fg">▅</span>▅▆▅▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃ ▁
+  93.8 ms<span class="ansi-black-intense-fg">          Histogram: frequency by time</span>          170 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">240 bytes</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">6</span>.</pre>
 </div>
 
 </div>
@@ -14312,7 +14284,7 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>96.6070165</pre>
+<pre>98.449899</pre>
 </div>
 
 </div>
@@ -14354,7 +14326,7 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>PyObject &lt;function sum at 0x7f942c344290&gt;</pre>
+<pre>PyObject &lt;function sum at 0x7f9b3a9fdb90&gt;</pre>
 </div>
 
 </div>
@@ -14387,17 +14359,16 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  336 bytes
-  allocs estimate:  6
-  --------------
-  minimum time:     314.659 μs (0.00% GC)
-  median time:      359.054 μs (0.00% GC)
-  mean time:        385.603 μs (0.00% GC)
-  maximum time:     903.908 μs (0.00% GC)
-  --------------
-  samples:          10000
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 10000 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">390.693 μs</span> … <span class="ansi-magenta-fg"> 4.333 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">459.754 μs              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">481.130 μs</span> ± <span class="ansi-green-fg">94.829 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+    ▆█      <span class="ansi-blue-fg"> </span>  <span class="ansi-green-fg"> </span>                                                
+  ▁▃███▇▆▅▅▅<span class="ansi-blue-fg">▄</span>▄▅<span class="ansi-green-fg">▆</span>▆▆▅▅▄▃▃▂▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ▂
+  391 μs<span class="ansi-black-intense-fg">          Histogram: frequency by time</span>          797 μs <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">240 bytes</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">6</span>.</pre>
 </div>
 
 </div>
@@ -14431,7 +14402,7 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.359054</pre>
+<pre>0.459754</pre>
 </div>
 
 </div>
@@ -14478,7 +14449,7 @@ function (x)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  0.000471 seconds (1 allocation: 16 bytes)
+<pre>  0.000450 seconds (1 allocation: 16 bytes)
 </pre>
 </div>
 </div>
@@ -14491,7 +14462,7 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>500060.34072352527</pre>
+<pre>500220.6882968192</pre>
 </div>
 
 </div>
@@ -14532,17 +14503,16 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  0 bytes
-  allocs estimate:  0
-  --------------
-  minimum time:     262.405 μs (0.00% GC)
-  median time:      299.495 μs (0.00% GC)
-  mean time:        314.795 μs (0.00% GC)
-  maximum time:     1.503 ms (0.00% GC)
-  --------------
-  samples:          10000
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 10000 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">270.633 μs</span> … <span class="ansi-magenta-fg">836.460 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">321.719 μs               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">339.574 μs</span> ± <span class="ansi-green-fg"> 50.124 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+      ▁▃▆█▇▇█▇▅▂<span class="ansi-blue-fg"> </span>   <span class="ansi-green-fg"> </span>                                            
+  ▁▂▄▆██████████<span class="ansi-blue-fg">█</span>▆▇▇<span class="ansi-green-fg">▇</span>▆▆▅▅▅▅▅▄▅▅▅▅▅▅▅▄▅▄▄▄▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁ ▄
+  271 μs<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>          498 μs <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">0 bytes</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">0</span>.</pre>
 </div>
 
 </div>
@@ -14575,7 +14545,7 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.299495</pre>
+<pre>0.3217185</pre>
 </div>
 
 </div>
@@ -14624,17 +14594,16 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  0 bytes
-  allocs estimate:  0
-  --------------
-  minimum time:     1.134 ms (0.00% GC)
-  median time:      1.201 ms (0.00% GC)
-  mean time:        1.227 ms (0.00% GC)
-  maximum time:     1.901 ms (0.00% GC)
-  --------------
-  samples:          4071
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 3971 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">1.165 ms</span> … <span class="ansi-magenta-fg"> 2.392 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">1.231 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">1.254 ms</span> ± <span class="ansi-green-fg">85.659 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+   ▄▂  ▃▅█▇<span class="ansi-blue-fg">▅</span>▂▂<span class="ansi-green-fg">▆</span>▁                                              
+  ▅██▇█████<span class="ansi-blue-fg">█</span>██<span class="ansi-green-fg">█</span>█▆▆▅▄▄▄▄▃▃▃▃▃▃▃▃▃▃▃▃▂▃▃▂▃▃▂▃▂▂▃▂▂▂▂▂▂▂▂▂▂▂▁▂▂ ▄
+  1.17 ms<span class="ansi-black-intense-fg">        Histogram: frequency by time</span>        1.58 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">0 bytes</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">0</span>.</pre>
 </div>
 
 </div>
@@ -14667,7 +14636,7 @@ function (x)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.200629</pre>
+<pre>1.231345</pre>
 </div>
 
 </div>
@@ -14716,15 +14685,15 @@ function (x)
 
 <div class="output_text output_subarea output_execute_result">
 <pre>9-element Vector{Pair{Any, Any}}:
-  &#34;Julia builtin&#34; =&gt; 0.299495
-   &#34;Python numpy&#34; =&gt; 0.359054
-      &#34;R builtin&#34; =&gt; 0.9619170000121358
-         &#34;R Rcpp&#34; =&gt; 1.1809470000230249
-              &#34;C&#34; =&gt; 1.1933465
-     &#34;Julia loop&#34; =&gt; 1.200629
-         &#34;R loop&#34; =&gt; 15.061760999998342
- &#34;Python builtin&#34; =&gt; 74.629914
-    &#34;Python loop&#34; =&gt; 96.6070165</pre>
+  &#34;Julia builtin&#34; =&gt; 0.3217185
+   &#34;Python numpy&#34; =&gt; 0.459754
+              &#34;C&#34; =&gt; 1.183365
+         &#34;R Rcpp&#34; =&gt; 1.2130129999832207
+     &#34;Julia loop&#34; =&gt; 1.231345
+      &#34;R builtin&#34; =&gt; 2.4676880001379686
+         &#34;R loop&#34; =&gt; 13.009848000137936
+ &#34;Python builtin&#34; =&gt; 75.373378
+    &#34;Python loop&#34; =&gt; 98.449899</pre>
 </div>
 
 </div>
