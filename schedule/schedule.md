@@ -13,6 +13,8 @@ Location and time: CHS 33-105A, Tuesday 1pm-2:50pm and Thursday 1pm-2:50pm.
 
 [CCLE Site](https://ccle.ucla.edu/course/view/22S-BIOSTAT257-1)
 
+Slack channel: <https://ucla.slack.com/archives/C039NH4NUSG>
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ucla-biostat-257/2022spring/master)
 
 Readings:  
