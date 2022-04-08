@@ -11,6 +11,8 @@ Mandatory daily symptom monitoring survey: <https://uclasurveys.co1.qualtrics.co
 
 Location and time: CHS 33-105A, Tuesday 1pm-2:50pm and Thursday 1pm-2:50pm.
 
+Zoom: <https://ucla.zoom.us/j/96234404896>
+
 [CCLE Site](https://ccle.ucla.edu/course/view/22S-BIOSTAT257-1)
 
 Slack channel: <https://ucla.slack.com/archives/C039NH4NUSG>
