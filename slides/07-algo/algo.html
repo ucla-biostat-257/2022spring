@@ -13236,7 +13236,7 @@ $O(n^2)$ algorithm takes about $10^{12}$ seconds, which is approximately 31710 y
 <blockquote><p><strong>The form of a mathematical expression and the way the expression should be evaluated in actual practice may be quite different.</strong></p>
 </blockquote>
 </li>
-<li><p>For example, compare flops of the two mathematically equivalent expressions: <code>A * B * x</code> and <code>A * (B * x)</code> where <code>A</code> and <code>B</code> are matrices and <code>x</code> is a vector.</p>
+<li><p>For example, compare flops of the two mathematically equivalent expressions: <code>(A * B) * x</code> and <code>A * (B * x)</code> where <code>A</code> and <code>B</code> are matrices and <code>x</code> is a vector.</p>
 </li>
 </ul>
 
@@ -13257,7 +13257,7 @@ $O(n^2)$ algorithm takes about $10^{12}$ seconds, which is approximately 31710 y
 <span class="n">x</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
 <span class="c"># complexity is n^3 + n^2 = O(n^3)</span>
-<span class="nd">@benchmark</span> <span class="o">$</span><span class="n">A</span> <span class="o">*</span> <span class="o">$</span><span class="n">B</span> <span class="o">*</span> <span class="o">$</span><span class="n">x</span>
+<span class="nd">@benchmark</span> <span class="p">(</span><span class="o">$</span><span class="n">A</span> <span class="o">*</span> <span class="o">$</span><span class="n">B</span><span class="p">)</span> <span class="o">*</span> <span class="o">$</span><span class="n">x</span>
 </pre></div>
 
     </div>
@@ -13276,16 +13276,16 @@ $O(n^2)$ algorithm takes about $10^{12}$ seconds, which is approximately 31710 y
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 7367 samples with 1 evaluation.
- Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">472.983 μs</span> … <span class="ansi-magenta-fg">  2.338 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">619.838 μs               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">660.782 μs</span> ± <span class="ansi-green-fg">140.985 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+<pre>BenchmarkTools.Trial: 286 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">13.822 ms</span> … <span class="ansi-magenta-fg">38.576 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">16.342 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">17.481 ms</span> ± <span class="ansi-green-fg"> 3.013 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>2.12% ± 4.44%
 
-       ▄█▅▂     <span class="ansi-blue-fg"> </span>   <span class="ansi-green-fg"> </span>                                            
-  ▁▁▁▂▅█████▆▅▄▄<span class="ansi-blue-fg">▄</span>▄▄▄<span class="ansi-green-fg">▃</span>▄▄▅▅▅▅▅▅▄▅▄▄▄▃▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ▃
-  473 μs<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>          1.1 ms <span class="ansi-bold">&lt;</span>
+   ▂▃▃▅▄▁▃█▃▁▃▂<span class="ansi-blue-fg"> </span> ▁   <span class="ansi-green-fg"> </span>             ▃                           
+  ▅████████████<span class="ansi-blue-fg">▆</span>▄█▄▃▄<span class="ansi-green-fg">▄</span>▇▇▄▃▆▄▄▁▅▇▇▇▄█▇▇▄▄▇▇▃▆▁▁▄▁▃▃▄▃▃▃▃▃▁▁▁▁▃ ▄
+  13.8 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>          25 ms <span class="ansi-bold">&lt;</span>
 
- Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">15.88 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">2</span>.</pre>
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">7.64 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">3</span>.</pre>
 </div>
 
 </div>
@@ -13299,8 +13299,7 @@ $O(n^2)$ algorithm takes about $10^{12}$ seconds, which is approximately 31710 y
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="c"># complexity is n^2 + n^2 = O(n^2)</span>
-<span class="nd">@benchmark</span> <span class="o">$</span><span class="n">A</span> <span class="o">*</span> <span class="p">(</span><span class="o">$</span><span class="n">B</span> <span class="o">*</span> <span class="o">$</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@code_lowered</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span> <span class="o">*</span> <span class="n">x</span>
 </pre></div>
 
     </div>
@@ -13319,14 +13318,52 @@ $O(n^2)$ algorithm takes about $10^{12}$ seconds, which is approximately 31710 y
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 7483 samples with 1 evaluation.
- Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">502.948 μs</span> … <span class="ansi-magenta-fg">  5.599 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">638.410 μs               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">652.818 μs</span> ± <span class="ansi-green-fg">135.772 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+<pre>CodeInfo(
+<span class="ansi-black-intense-fg">1 ─</span> %1 = B * x
+<span class="ansi-black-intense-fg">│  </span> %2 = A * %1
+<span class="ansi-black-intense-fg">└──</span>      return %2
+)</pre>
+</div>
 
-      ▅█▆▂     ▂▃▃<span class="ansi-blue-fg">▃</span><span class="ansi-green-fg">▄</span>▁                                            
-  ▁▂▃▅████▇▆▇▆▇███<span class="ansi-blue-fg">█</span><span class="ansi-green-fg">█</span>██▇█▇▇▆▆▄▄▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ▃
-  503 μs<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>         1.03 ms <span class="ansi-bold">&lt;</span>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># complexity is n^2 + n^2 = O(n^2)</span>
+<span class="nd">@benchmark</span> <span class="o">$</span><span class="n">A</span> <span class="o">*</span> <span class="p">(</span><span class="o">$</span><span class="n">B</span> <span class="o">*</span> <span class="o">$</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>BenchmarkTools.Trial: 6789 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">469.992 μs</span> … <span class="ansi-magenta-fg">  2.217 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">726.078 μs               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">717.628 μs</span> ± <span class="ansi-green-fg">103.142 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+                   ▂▂▃▂▃▁▁▁▁▂▃<span class="ansi-green-fg">▃</span><span class="ansi-blue-fg">▅</span>▆▆██▆▅▃▂                         
+  ▁▃▄▄▃▃▂▂▂▂▂▃▃▄▅▇████████████<span class="ansi-green-fg">█</span><span class="ansi-blue-fg">█</span>████████▇█▅▄▄▄▃▃▂▂▂▂▁▂▁▁▁▁▁▂▁▁▁ ▄
+  470 μs<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>         1.01 ms <span class="ansi-bold">&lt;</span>
 
  Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">15.88 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">2</span>.</pre>
 </div>
@@ -13352,7 +13389,7 @@ $O(n^2)$ algorithm takes about $10^{12}$ seconds, which is approximately 31710 y
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">versioninfo</span><span class="p">()</span>
@@ -13408,7 +13445,7 @@ in single precision.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">LinearAlgebra</span>
@@ -13426,13 +13463,13 @@ in single precision.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.4249492244603958e11</pre>
+<pre>1.458003904777138e11</pre>
 </div>
 
 </div>
