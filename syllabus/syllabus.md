@@ -20,7 +20,7 @@ Location and time: CHS 33-105A, Tuesday 1pm-2:50pm and Thursday 1pm-2:50pm.
 [Dr. Hua Zhou](http://hua-zhou.github.io/)  
 Office: CHS 21-254A  
 Email: <huazhou@ucla.edu>  
-Office hours: Tue/Thu 3pm-4pm, in office and Zoom <https://ucla.zoom.us/j/96234404896>
+Office hours: Tue 3pm-4pm, Thu 4:30pm-5:30pm in office and Zoom <https://ucla.zoom.us/j/96234404896>
 
 ### Teaching Assistant
 
