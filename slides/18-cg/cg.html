@@ -13125,14 +13125,14 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Julia Version 1.6.0
-Commit f9720dc2eb (2021-03-24 12:55 UTC)
+<pre>Julia Version 1.7.1
+Commit ac5cc99908 (2021-12-22 19:35 UTC)
 Platform Info:
-  OS: macOS (x86_64-apple-darwin19.6.0)
+  OS: macOS (x86_64-apple-darwin19.5.0)
   CPU: Intel(R) Core(TM) i7-6920HQ CPU @ 2.90GHz
   WORD_SIZE: 64
   LIBM: libopenlibm
-  LLVM: libLLVM-11.0.1 (ORCJIT, skylake)
+  LLVM: libLLVM-12.0.1 (ORCJIT, skylake)
 Environment:
   JULIA_EDITOR = code
   JULIA_NUM_THREADS = 4
@@ -13407,14 +13407,19 @@ Choose $\mathbf{C}$ such that</p>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>include group.jl for user defined matrix generators
-verify download of index files...
-reading database
-adding metadata...
-adding svd data...
-writing database
-used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML index
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>┌ Info: verify download of index files...
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/MatrixDepot.jl:139
+┌ Info: reading database
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:23
+┌ Info: adding metadata...
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:67
+┌ Info: adding svd data...
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:69
+┌ Info: writing database
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:74
+┌ Info: used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML index
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/MatrixDepot.jl:141
 </pre>
 </div>
 </div>
@@ -13481,32 +13486,32 @@ used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre><span class="ansi-bold">                      Sparsity Pattern</span>
-<span class="ansi-black-intense-fg">         ┌──────────────────────────────────────────┐</span>    
-       <span class="ansi-black-intense-fg">1</span><span class="ansi-black-intense-fg"> │</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
-        <span class="ansi-black-intense-fg"> │</span>⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀<span class="ansi-black-intense-fg">│</span>    
-   <span class="ansi-black-intense-fg">30401</span><span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-black-intense-fg">│</span>    
-<span class="ansi-black-intense-fg">         └──────────────────────────────────────────┘</span>    
-<span class="ansi-black-intense-fg">         1</span><span class="ansi-black-intense-fg">                    </span><span class="ansi-black-intense-fg">                  30401</span>
-                         nz = 471601</pre>
+<pre>         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-bold">Sparsity Pattern</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    
+         <span class="ansi-black-intense-fg">┌──────────────────────────────────────────┐</span>    
+       <span class="ansi-black-intense-fg">1</span> <span class="ansi-black-intense-fg">│</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
+         <span class="ansi-black-intense-fg">│</span>⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡀</span>⠀<span class="ansi-black-intense-fg">│</span>    
+   <span class="ansi-black-intense-fg">30401</span> <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">└──────────────────────────────────────────┘</span>    
+         ⠀<span class="ansi-black-intense-fg">1</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">30401</span>⠀    
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀471601 nonzeros⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    </pre>
 </div>
 
 </div>
@@ -13577,17 +13582,16 @@ used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  951.36 KiB
-  allocs estimate:  16
-  --------------
-  minimum time:     187.391 ms (0.00% GC)
-  median time:      212.695 ms (0.00% GC)
-  mean time:        208.269 ms (0.00% GC)
-  maximum time:     253.756 ms (0.00% GC)
-  --------------
-  samples:          25
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 18 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">271.488 ms</span> … <span class="ansi-magenta-fg">297.578 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">285.514 ms               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">284.358 ms</span> ± <span class="ansi-green-fg">  6.002 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+                     ▃          <span class="ansi-green-fg"> </span><span class="ansi-blue-fg"> </span>  █    ▃                       
+  ▇▁▁▁▁▁▁▁▁▁▁▁▇▁▁▁▇▁▁█▁▇▁▁▁▇▇▁▁▁<span class="ansi-green-fg">▁</span><span class="ansi-blue-fg">▇</span>▁▁█▁▁▁▁█▇▇▇▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇ ▁
+  271 ms<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>          298 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">951.14 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">16</span>.</pre>
 </div>
 
 </div>
@@ -13626,29 +13630,23 @@ used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-MethodError: no method matching iterate(::LimitedLDLFactorizations.LimitedLDLFactorization{Float64, Int64})
-Closest candidates are:
-  iterate(<span class="ansi-red-intense-fg">::Union{LinRange, StepRangeLen}</span>) at range.jl:664
-  iterate(<span class="ansi-red-intense-fg">::Union{LinRange, StepRangeLen}</span>, <span class="ansi-red-intense-fg">::Int64</span>) at range.jl:664
-  iterate(<span class="ansi-red-intense-fg">::T</span>) where T&lt;:Union{Base.KeySet{var&#34;#s79&#34;, var&#34;#s78&#34;} where {var&#34;#s79&#34;, var&#34;#s78&#34;&lt;:Dict}, Base.ValueIterator{var&#34;#s77&#34;} where var&#34;#s77&#34;&lt;:Dict} at dict.jl:693
-  ...
-
-Stacktrace:
- [1] indexed_iterate(I::LimitedLDLFactorizations.LimitedLDLFactorization{Float64, Int64}, i::Int64)
-   @ Base ./tuple.jl:89
- [2] CholeskyPreconditioner(A::SparseMatrixCSC{Float64, Int64}, memory::Int64)
-   @ Preconditioners ~/.julia/packages/Preconditioners/03GuC/src/incompletecholesky.jl:28
- [3] top-level scope
-   @ ./timing.jl:210 [inlined]
- [4] top-level scope
-   @ ./In[6]:0
- [5] eval
-   @ ./boot.jl:360 [inlined]
- [6] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
-   @ Base ./loading.jl:1094</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  1.200473 seconds (2.27 M allocations: 149.135 MiB, 4.91% gc time, 92.06% compilation time)
+</pre>
 </div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>CholeskyPreconditioner{LimitedLDLFactorizations.LimitedLDLFactorization{Float64, Int64}}(LimitedLDLFactorizations.LimitedLDLFactorization{Float64, Int64}(sparse([3, 4, 5, 11, 12, 1557, 1558, 1559, 1599, 4639  …  30397, 30398, 30399, 30400, 30398, 30399, 30400, 30399, 30400, 30400], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1  …  30396, 30396, 30396, 30396, 30397, 30397, 30397, 30398, 30398, 30399], [0.2928692105324324, -0.18749999999999992, 0.33213078946756747, 0.26570463157405394, -0.132852315787027, 0.2928692105324325, -0.18749999999999992, -0.13285231578702697, 0.33213078946756736, -0.11714768421297297  …  -0.14368581486781312, 0.04154836422498976, 0.17540376760226187, -0.08770188380113095, -0.06839451919581077, -0.16420498625505273, 0.08210249312752634, -0.018008271316355826, 0.00900413565817793, -0.03707766302835929], 30401, 30401), [105.00915975638387, 28.635712520465887, 51.48053505296906, 19.977190523058535, 50.83936432807823, 82.71181867163556, 65.35753915682423, 80.5362126761502, 21.728488868708773, 27.487012698523007  …  16.817111738291718, 38.026523975066276, 15.584563467047452, 32.61134858355674, 16.90642172578005, 47.36741972341718, 21.339679860041965, 48.37669000324009, 12.074292233186872, 55.391184176031494], [5112, 5414, 5290, 5291, 5292, 5114, 5416, 5294, 5295, 5296  …  29131, 29261, 29429, 29563, 29731, 29865, 30033, 30167, 30335, 19305], 0.0), 2)</pre>
+</div>
+
 </div>
 
 </div>
@@ -13676,17 +13674,20 @@ Stacktrace:
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-UndefVarError: p not defined
-
-Stacktrace:
- [1] top-level scope
-   @ In[7]:1
- [2] eval
-   @ ./boot.jl:360 [inlined]
- [3] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
-   @ Base ./loading.jl:1094</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CholeskyPreconditioner{LimitedLDLFactorizations.LimitedLDLFactorization{Float64, Int64}}
+  ldlt: LimitedLDLFactorizations.LimitedLDLFactorization{Float64, Int64}
+    L: SparseMatrixCSC{Float64, Int64}
+      m: Int64 30401
+      n: Int64 30401
+      colptr: Array{Int64}((30402,)) [1, 13, 25, 37, 54, 65, 77, 89, 101, 118  …  265014, 265017, 265021, 265024, 265028, 265031, 265033, 265034, 265034, 265034]
+      rowval: Array{Int64}((265033,)) [3, 4, 5, 11, 12, 1557, 1558, 1559, 1599, 4639  …  30397, 30398, 30399, 30400, 30398, 30399, 30400, 30399, 30400, 30400]
+      nzval: Array{Float64}((265033,)) [0.2928692105324324, -0.18749999999999992, 0.33213078946756747, 0.26570463157405394, -0.132852315787027, 0.2928692105324325, -0.18749999999999992, -0.13285231578702697, 0.33213078946756736, -0.11714768421297297  …  -0.14368581486781312, 0.04154836422498976, 0.17540376760226187, -0.08770188380113095, -0.06839451919581077, -0.16420498625505273, 0.08210249312752634, -0.018008271316355826, 0.00900413565817793, -0.03707766302835929]
+    D: Array{Float64}((30401,)) [105.00915975638387, 28.635712520465887, 51.48053505296906, 19.977190523058535, 50.83936432807823, 82.71181867163556, 65.35753915682423, 80.5362126761502, 21.728488868708773, 27.487012698523007  …  16.817111738291718, 38.026523975066276, 15.584563467047452, 32.61134858355674, 16.90642172578005, 47.36741972341718, 21.339679860041965, 48.37669000324009, 12.074292233186872, 55.391184176031494]
+    P: Array{Int64}((30401,)) [5112, 5414, 5290, 5291, 5292, 5114, 5416, 5294, 5295, 5296  …  29131, 29261, 29429, 29563, 29731, 29865, 30033, 30167, 30335, 19305]
+    α: Float64 0.0
+  memory: Int64 2
+</pre>
 </div>
 </div>
 
@@ -13723,21 +13724,15 @@ Stacktrace:
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-UndefVarError: p not defined
 
-Stacktrace:
- [1] top-level scope
-   @ In[8]:2
- [2] eval
-   @ ./boot.jl:360 [inlined]
- [3] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
-   @ Base ./loading.jl:1094</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>7.185423481898801e-7</pre>
 </div>
+
 </div>
 
 </div>
@@ -13763,21 +13758,24 @@ Stacktrace:
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-UndefVarError: p not defined
 
-Stacktrace:
- [1] top-level scope
-   @ ~/.julia/packages/BenchmarkTools/eCEpo/src/execution.jl:332
- [2] eval
-   @ ./boot.jl:360 [inlined]
- [3] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
-   @ Base ./loading.jl:1094</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>BenchmarkTools.Trial: 160 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">24.668 ms</span> … <span class="ansi-magenta-fg">40.893 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">31.904 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">31.364 ms</span> ± <span class="ansi-green-fg"> 4.041 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.24% ± 1.82%
+
+  ▂    ▂▄▂▆▆▄   ▂▂    ▂       <span class="ansi-green-fg"> </span> <span class="ansi-blue-fg">▂</span>▄      ▆ ▂█   ▂▄▂    ▂        
+  █▄█▄▆██████▆█▁██▄█▆▆█▄▄▁█▁▆▄<span class="ansi-green-fg">█</span>█<span class="ansi-blue-fg">█</span>█▄▆███▆██████████▄▆▁▆█▁▁▄▄▄▄ ▄
+  24.7 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>        38.9 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">951.38 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">31</span>.</pre>
 </div>
+
 </div>
 
 </div>
@@ -13815,7 +13813,7 @@ Stacktrace:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  2.622242 seconds (5.82 M allocations: 386.169 MiB, 5.08% gc time, 96.66% compilation time)
+<pre>  3.292029 seconds (6.74 M allocations: 413.357 MiB, 5.16% gc time, 96.94% compilation time)
 </pre>
 </div>
 </div>
@@ -13830,20 +13828,20 @@ Stacktrace:
 <div class="output_text output_subarea output_execute_result">
 <pre>Multilevel Solver
 -----------------
-Operator Complexity: 1.136
-Grid Complexity: 1.136
+Operator Complexity: 1.134
+Grid Complexity: 1.134
 No. of Levels: 8
-Coarse Solver: AlgebraicMultigrid.Pinv{Float64}([0.00033290758106563264 -2.430076566483244e-23 -1.5465385103508593e-15 4.181462985348164e-37 7.335286204503413e-28 2.04081966140343e-46; -2.4300765430483616e-23 0.00017263550078990635 -1.855366165091817e-20 -2.5001094945826713e-18 8.853819591082134e-24 -1.4496047245192902e-27; -1.5465385103508594e-15 -9.874586274391721e-20 0.00020440063155118416 -8.75235548703683e-27 -9.694793390363323e-17 -4.0478079442961434e-39; 4.181462369659301e-37 -2.5001092091633973e-18 -8.75234095693653e-27 0.000166037409565488 -5.435940548238944e-20 -2.98048656422428e-18; 7.335286204503411e-28 -1.6793856935147662e-24 -9.694793390363317e-17 1.8176589463712647e-21 0.0005008669588701624 2.1729027037016824e-26; 2.0408196786742502e-46 -1.4496047245606634e-27 -4.048210808421529e-39 -2.980486564307864e-18 2.172902936476102e-26 0.00021199427904197978])
+Coarse Solver: AlgebraicMultigrid.Pinv{Float64}([0.00020737941435068982 -1.041560708551748e-14 -1.1909528401805362e-20 -2.0796647979099457e-28; -1.0415607085517498e-14 0.0001553475326153826 -3.209121133384129e-11 -4.3433429342086683e-26; -1.1909528401805453e-20 -3.209121133384134e-11 0.0001494976484982481 -7.497853836415937e-29; -2.0796647979099475e-28 -4.343343021455116e-26 -2.477878638808554e-28 0.00016244434371483899])
 Level     Unknowns     NonZeros
 -----     --------     --------
-    1        30401       471601 [88.01%]
-    2         3623        45339 [ 8.46%]
-    3         1103        13341 [ 2.49%]
-    4          359         3955 [ 0.74%]
-    5          125         1149 [ 0.21%]
-    6           45          363 [ 0.07%]
-    7           15           87 [ 0.02%]
-    8            6           28 [ 0.01%]
+    1        30401       471601 [88.20%]
+    2         3604        45046 [ 8.42%]
+    3         1085        12971 [ 2.43%]
+    4          344         3728 [ 0.70%]
+    5          108          988 [ 0.18%]
+    6           36          280 [ 0.05%]
+    7           14           84 [ 0.02%]
+    8            4           16 [ 0.00%]
 </pre>
 </div>
 
@@ -13881,7 +13879,7 @@ Level     Unknowns     NonZeros
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>6.864848832296412e-7</pre>
+<pre>7.140145915743859e-7</pre>
 </div>
 
 </div>
@@ -13914,17 +13912,16 @@ Level     Unknowns     NonZeros
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  951.45 KiB
-  allocs estimate:  16
-  --------------
-  minimum time:     90.002 ms (0.00% GC)
-  median time:      91.339 ms (0.00% GC)
-  mean time:        92.478 ms (0.08% GC)
-  maximum time:     99.420 ms (0.00% GC)
-  --------------
-  samples:          55
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 53 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">90.241 ms</span> … <span class="ansi-magenta-fg">111.858 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">93.860 ms               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">95.898 ms</span> ± <span class="ansi-green-fg">  5.230 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+  ▁ █▄▄▄▄ ▁█▄<span class="ansi-blue-fg"> </span>  ▁  <span class="ansi-green-fg">▁</span>  ▁     ▁                                   
+  █▁█████▆███<span class="ansi-blue-fg">▆</span>▆▆█▁▆<span class="ansi-green-fg">█</span>▁▁█▁▆▁▁▆█▆▁▆▁▆▁▆▆▁▆▁▁▁▆▁▁▁▁▁▁▁▆▁▆▁▁▁▁▁▁▁▁▆ ▁
+  90.2 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>          111 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">951.23 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">16</span>.</pre>
 </div>
 
 </div>
@@ -14034,17 +14031,16 @@ Level     Unknowns     NonZeros
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  1.41 GiB
-  allocs estimate:  147
-  --------------
-  minimum time:     4.190 s (2.87% GC)
-  median time:      4.206 s (2.82% GC)
-  mean time:        4.206 s (2.82% GC)
-  maximum time:     4.221 s (2.77% GC)
-  --------------
-  samples:          2
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 2 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">4.601 s</span> … <span class="ansi-magenta-fg">  4.624 s</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>3.58% … 3.67%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">4.612 s              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>3.62%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">4.612 s</span> ± <span class="ansi-green-fg">16.439 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>3.62% ± 0.07%
+
+  <span class="ansi-blue-fg">█</span>                           <span class="ansi-green-fg"> </span>                           █  
+  <span class="ansi-blue-fg">█</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁<span class="ansi-green-fg">▁</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁
+  4.6 s<span class="ansi-black-intense-fg">          Histogram: frequency by time</span>        4.62 s <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">1.55 GiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">184</span>.</pre>
 </div>
 
 </div>
@@ -14078,7 +14074,7 @@ Level     Unknowns     NonZeros
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>norm(β̂_qr - β̂_lsqr) = 0.00011504102075851406
+<pre>norm(β̂_qr - β̂_lsqr) = 0.00010289622980521999
 </pre>
 </div>
 </div>
@@ -14091,17 +14087,16 @@ Level     Unknowns     NonZeros
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  14.73 MiB
-  allocs estimate:  1524
-  --------------
-  minimum time:     41.460 ms (0.00% GC)
-  median time:      44.659 ms (0.00% GC)
-  mean time:        45.903 ms (4.74% GC)
-  maximum time:     60.293 ms (12.47% GC)
-  --------------
-  samples:          110
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 101 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">44.981 ms</span> … <span class="ansi-magenta-fg">66.344 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 18.07%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">47.282 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">49.740 ms</span> ± <span class="ansi-green-fg"> 4.854 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>4.80% ±  7.49%
+
+   ▁▂ █▇▂<span class="ansi-blue-fg">▂</span>       <span class="ansi-green-fg"> </span>                                             
+  ▃██▇███<span class="ansi-blue-fg">█</span>▃▆▆▆▆▃▃<span class="ansi-green-fg">▁</span>▃▃▄▃▁▁▁▁▃▁▁▁▁▁▁▄▄▄▄▆▆▄▃▁▁▁▃▁▃▃▁▄▁▁▃▁▁▁▁▁▁▁▃ ▃
+  45 ms<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>        63.4 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">16.63 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">1724</span>.</pre>
 </div>
 
 </div>
@@ -14135,7 +14130,7 @@ Level     Unknowns     NonZeros
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>norm(β̂_qr - β̂_lsmr) = 0.09967835432536555
+<pre>norm(β̂_qr - β̂_lsmr) = 1.1712840250276548
 </pre>
 </div>
 </div>
@@ -14148,17 +14143,16 @@ Level     Unknowns     NonZeros
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  5.36 MiB
-  allocs estimate:  683
-  --------------
-  minimum time:     27.352 ms (0.00% GC)
-  median time:      28.302 ms (0.00% GC)
-  mean time:        29.262 ms (2.59% GC)
-  maximum time:     38.050 ms (18.14% GC)
-  --------------
-  samples:          171
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 164 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">26.682 ms</span> … <span class="ansi-magenta-fg">48.247 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 28.14%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">29.568 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">30.473 ms</span> ± <span class="ansi-green-fg"> 3.512 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>2.81% ±  7.29%
+
+    ▁ █▃▁     <span class="ansi-blue-fg">▃</span>  ▁<span class="ansi-green-fg"> </span>                                            
+  ▆▇█▇███▇██▇▇<span class="ansi-blue-fg">█</span>▄▇█<span class="ansi-green-fg">▄</span>▅▁▅▆██▅▆▅▇▄▄▄▃▁▁▁▁▁▁▁▁▁▁▁▃▁▃▁▁▃▃▃▁▁▃▃▃▁▃▃▃ ▃
+  26.7 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>        40.8 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">5.54 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">708</span>.</pre>
 </div>
 
 </div>
@@ -14438,32 +14432,32 @@ D&#39; * v = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre><span class="ansi-bold">                    Sparsity Pattern</span>
-<span class="ansi-black-intense-fg">       ┌──────────────────────────────────────────┐</span>    
-     <span class="ansi-black-intense-fg">1</span><span class="ansi-black-intense-fg"> │</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
-      <span class="ansi-black-intense-fg"> │</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀<span class="ansi-black-intense-fg">│</span>    
-   <span class="ansi-black-intense-fg">100</span><span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-black-intense-fg">│</span>    
-<span class="ansi-black-intense-fg">       └──────────────────────────────────────────┘</span>    
-<span class="ansi-black-intense-fg">       1</span><span class="ansi-black-intense-fg">                    </span><span class="ansi-black-intense-fg">                    100</span>
-                        nz = 200</pre>
+<pre>       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-bold">Sparsity Pattern</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    
+       <span class="ansi-black-intense-fg">┌──────────────────────────────────────────┐</span>    
+     <span class="ansi-black-intense-fg">1</span> <span class="ansi-black-intense-fg">│</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
+       <span class="ansi-black-intense-fg">│</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span>⠀⠀<span class="ansi-black-intense-fg">│</span>    
+   <span class="ansi-black-intense-fg">100</span> <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠳</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">└──────────────────────────────────────────┘</span>    
+       ⠀<span class="ansi-black-intense-fg">1</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">100</span>⠀    
+       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀200 nonzeros⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    </pre>
 </div>
 
 </div>

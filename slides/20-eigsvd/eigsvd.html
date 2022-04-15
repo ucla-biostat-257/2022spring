@@ -13126,14 +13126,14 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Julia Version 1.6.0
-Commit f9720dc2eb (2021-03-24 12:55 UTC)
+<pre>Julia Version 1.7.1
+Commit ac5cc99908 (2021-12-22 19:35 UTC)
 Platform Info:
-  OS: macOS (x86_64-apple-darwin19.6.0)
+  OS: macOS (x86_64-apple-darwin19.5.0)
   CPU: Intel(R) Core(TM) i7-6920HQ CPU @ 2.90GHz
   WORD_SIZE: 64
   LIBM: libopenlibm
-  LLVM: libLLVM-11.0.1 (ORCJIT, skylake)
+  LLVM: libLLVM-12.0.1 (ORCJIT, skylake)
 Environment:
   JULIA_EDITOR = code
   JULIA_NUM_THREADS = 4
@@ -13148,7 +13148,7 @@ Environment:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linear-algebra-review:-eigen-decomposition">Linear algebra review: eigen-decomposition<a class="anchor-link" href="#Linear-algebra-review:-eigen-decomposition">&#182;</a></h2><p>For a quick review of eigen-decomposition, see <a href="https://ucla-biostat216-2019fall.github.io/slides/10-eig/10-eig.html">Biostat 216 slides</a>.</p>
+<h2 id="Linear-algebra-review:-eigen-decomposition">Linear algebra review: eigen-decomposition<a class="anchor-link" href="#Linear-algebra-review:-eigen-decomposition">&#182;</a></h2><p>For a quick review of eigen-decomposition, see <a href="https://ucla-biostat216-2021fall.github.io/slides/10-eig/10-eig.html">Biostat 216 slides</a>.</p>
 <ul>
 <li><p><strong>Eigenvalues</strong> are defined as roots of the characteristic equation $\det(\lambda \mathbf{I}_n - \mathbf{A})=0$.</p>
 </li>
@@ -13189,7 +13189,7 @@ The eigenvalues and eigenvectors of a real <strong>symmetric</strong> matrix are
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linear-algebra-review:-singular-value-decomposition-(SVD)">Linear algebra review: singular value decomposition (SVD)<a class="anchor-link" href="#Linear-algebra-review:-singular-value-decomposition-(SVD)">&#182;</a></h2><p>For a quick review of SVD, see <a href="https://ucla-biostat216-2019fall.github.io/slides/12-svd/12-svd.html">Biostat 216 slides</a>.</p>
+<h2 id="Linear-algebra-review:-singular-value-decomposition-(SVD)">Linear algebra review: singular value decomposition (SVD)<a class="anchor-link" href="#Linear-algebra-review:-singular-value-decomposition-(SVD)">&#182;</a></h2><p>For a quick review of SVD, see <a href="https://ucla-biostat216-2021fall.github.io/slides/12-svd/12-svd.html">Biostat 216 slides</a>.</p>
 <ul>
 <li><p><strong>Singular value decomposition (SVD)</strong>: For a rectangular matrix $\mathbf{A} \in \mathbb{R}^{m \times n}$, let $p = \min\{m,n\}$, then we have the SVD
 $$
@@ -13344,9 +13344,9 @@ where $\Sigma^+ = \text{diag}(\sigma_1^{-1}, \ldots, \sigma_r^{-1}, 0, \ldots, 0
 
 <div class="output_text output_subarea output_execute_result">
 <pre>3×5 Matrix{Float64}:
-  0.437274  0.229255   -0.0647738  0.404323   0.256546
- -0.698807  0.47206    -0.208369   0.128094  -0.111294
-  0.328826  0.0779974  -0.585467   0.822013   0.654952</pre>
+  0.55218   -0.646969   0.0290464   0.256063  -0.116156
+ -0.185495   0.321492  -0.0859872  -0.655442   0.495053
+  0.479661  -0.14741    0.851572   -0.49494    0.630008</pre>
 </div>
 
 </div>
@@ -13379,7 +13379,7 @@ where $\Sigma^+ = \text{diag}(\sigma_1^{-1}, \ldots, \sigma_r^{-1}, 0, \ldots, 0
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-pinv(A::<b>AbstractMatrix{T}</b>; <i>atol, rtol</i>)<i> where T</i> in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/dense.jl" target="_blank">/Applications/Julia-1.6.app/Contents/Resources/julia/share/julia/stdlib/v1.6/LinearAlgebra/src/dense.jl:1366</a>
+pinv(A::<b>AbstractMatrix{T}</b>; <i>atol, rtol</i>)<i> where T</i> in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.7/LinearAlgebra/src/dense.jl" target="_blank">/Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/dense.jl:1427</a>
 </div>
 
 </div>
@@ -13651,18 +13651,18 @@ $$</p>
 <pre>Eigen{Float64, Float64, Matrix{Float64}, Vector{Float64}}
 values:
 5-element Vector{Float64}:
- -2.1603667880528024
- -0.45311322065844806
-  0.005228588501780873
-  1.0087942693578587
-  2.442072645766202
+ -3.852502725326395
+ -0.9957775596103877
+ -0.44684824330076456
+  1.3655958826562993
+  2.8778151937868666
 vectors:
 5×5 Matrix{Float64}:
- -0.160965   0.252917   0.563345  -0.348434  -0.686556
- -0.234072   0.348945  -0.104998  -0.760774   0.48337
- -0.669053   0.54074   -0.240558   0.444545  -0.0669363
- -0.574776  -0.676318  -0.306504  -0.244645  -0.241725
- -0.375901  -0.2539     0.720975   0.205781   0.48175</pre>
+ -0.445328     0.0380181   0.299237    0.534168  -0.652195
+ -0.00876336   0.891758   -0.111185   -0.342663  -0.273699
+  0.156911    -0.148357   -0.884934    0.189716  -0.366427
+ -0.529748    -0.370278   -0.0707939  -0.70901   -0.273048
+  0.704523    -0.210255    0.331625   -0.24199   -0.539357</pre>
 </div>
 
 </div>
@@ -13697,11 +13697,11 @@ vectors:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>5-element Vector{Float64}:
- -2.1603667880528024
- -0.45311322065844806
-  0.005228588501780873
-  1.0087942693578587
-  2.442072645766202</pre>
+ -3.852502725326395
+ -0.9957775596103877
+ -0.44684824330076456
+  1.3655958826562993
+  2.8778151937868666</pre>
 </div>
 
 </div>
@@ -13736,11 +13736,11 @@ vectors:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>5×5 Matrix{Float64}:
- -0.160965   0.252917   0.563345  -0.348434  -0.686556
- -0.234072   0.348945  -0.104998  -0.760774   0.48337
- -0.669053   0.54074   -0.240558   0.444545  -0.0669363
- -0.574776  -0.676318  -0.306504  -0.244645  -0.241725
- -0.375901  -0.2539     0.720975   0.205781   0.48175</pre>
+ -0.445328     0.0380181   0.299237    0.534168  -0.652195
+ -0.00876336   0.891758   -0.111185   -0.342663  -0.273699
+  0.156911    -0.148357   -0.884934    0.189716  -0.366427
+ -0.529748    -0.370278   -0.0707939  -0.70901   -0.273048
+  0.704523    -0.210255    0.331625   -0.24199   -0.539357</pre>
 </div>
 
 </div>
@@ -13775,11 +13775,11 @@ vectors:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>5×5 Matrix{Float64}:
-  60.8569  -11.3982   -26.4049   -32.5366    77.5874
- -11.3982    2.48384    3.99336    6.75028  -14.3833
- -26.4049    3.99336   10.4129    14.6296   -32.9067
- -32.5366    6.75028   14.6296    16.8883   -42.8407
-  77.5874  -14.3833   -32.9067   -42.8407    99.3452</pre>
+  0.103435   -0.0326116   0.773661   -0.215148  -0.105034
+ -0.0326116  -0.714276   -0.0997287   0.516655   0.384428
+  0.773661   -0.0997287  -1.708      -0.237522   0.631784
+ -0.215148    0.516655   -0.237522    0.172274   0.248048
+ -0.105034    0.384428    0.631784    0.248048  -0.275379</pre>
 </div>
 
 </div>
@@ -13811,7 +13811,7 @@ vectors:
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-inv(A::<b>Eigen</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/eigen.jl" target="_blank">/Applications/Julia-1.6.app/Contents/Resources/julia/share/julia/stdlib/v1.6/LinearAlgebra/src/eigen.jl:423</a>
+inv(A::<b>Eigen</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.7/LinearAlgebra/src/eigen.jl" target="_blank">/Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/eigen.jl:423</a>
 </div>
 
 </div>
@@ -13845,7 +13845,7 @@ inv(A::<b>Eigen</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/w
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.012608977654413827</pre>
+<pre>-6.736750207215871</pre>
 </div>
 
 </div>
@@ -13877,7 +13877,7 @@ inv(A::<b>Eigen</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/w
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-det(A::<b>Eigen</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/eigen.jl" target="_blank">/Applications/Julia-1.6.app/Contents/Resources/julia/share/julia/stdlib/v1.6/LinearAlgebra/src/eigen.jl:424</a>
+det(A::<b>Eigen</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.7/LinearAlgebra/src/eigen.jl" target="_blank">/Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/eigen.jl:424</a>
 </div>
 
 </div>
@@ -13909,7 +13909,7 @@ det(A::<b>Eigen</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/w
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-eigvals(A::<b>Union{Hermitian{T, S}, Hermitian{Complex{T}, S}, Symmetric{T, S}} where {T<:Real, S}</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/symmetric.jl" target="_blank">/Applications/Julia-1.6.app/Contents/Resources/julia/share/julia/stdlib/v1.6/LinearAlgebra/src/symmetric.jl:737</a>
+eigvals(A::<b>Union{Hermitian{T, S}, Hermitian{Complex{T}, S}, Symmetric{T, S}} where {T<:Real, S}</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.7/LinearAlgebra/src/symmetriceigen.jl" target="_blank">/Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/symmetriceigen.jl:66</a>
 </div>
 
 </div>
@@ -13941,7 +13941,7 @@ eigvals(A::<b>Union{Hermitian{T, S}, Hermitian{Complex{T}, S}, Symmetric{T, S}} 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-eigmax(A::<b>Union{Hermitian{var"#s832", var"#s831"}, Hermitian{Complex{var"#s832"}, var"#s831"}, Symmetric{var"#s832", var"#s831"}} where {var"#s832"<:Real, var"#s831"<:(StridedMatrix{T} where T)}</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/symmetric.jl" target="_blank">/Applications/Julia-1.6.app/Contents/Resources/julia/share/julia/stdlib/v1.6/LinearAlgebra/src/symmetric.jl:824</a>
+eigmax(A::<b>Union{Hermitian{var"#s859", var"#s858"}, Hermitian{Complex{var"#s859"}, var"#s858"}, Symmetric{var"#s859", var"#s858"}} where {var"#s859"<:Real, var"#s858"<:(StridedMatrix{T} where T)}</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.7/LinearAlgebra/src/symmetriceigen.jl" target="_blank">/Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/symmetriceigen.jl:153</a>
 </div>
 
 </div>
@@ -13973,7 +13973,7 @@ eigmax(A::<b>Union{Hermitian{var"#s832", var"#s831"}, Hermitian{Complex{var"#s83
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-eigmin(A::<b>Union{Hermitian{var"#s832", var"#s831"}, Hermitian{Complex{var"#s832"}, var"#s831"}, Symmetric{var"#s832", var"#s831"}} where {var"#s832"<:Real, var"#s831"<:(StridedMatrix{T} where T)}</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/symmetric.jl" target="_blank">/Applications/Julia-1.6.app/Contents/Resources/julia/share/julia/stdlib/v1.6/LinearAlgebra/src/symmetric.jl:825</a>
+eigmin(A::<b>Union{Hermitian{var"#s859", var"#s858"}, Hermitian{Complex{var"#s859"}, var"#s858"}, Symmetric{var"#s859", var"#s858"}} where {var"#s859"<:Real, var"#s858"<:(StridedMatrix{T} where T)}</b>) in LinearAlgebra at <a href="file:///Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.7/LinearAlgebra/src/symmetriceigen.jl" target="_blank">/Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/symmetriceigen.jl:154</a>
 </div>
 
 </div>
@@ -14019,32 +14019,32 @@ eigmin(A::<b>Union{Hermitian{var"#s832", var"#s831"}, Hermitian{Complex{var"#s83
 
 <div class="output_text output_subarea output_execute_result">
 <pre>1000×1000 Symmetric{Float64, Matrix{Float64}}:
-  1.19027    -1.62037     -0.195171  …   0.452632    -0.34094   -0.503688
- -1.62037     0.116473    -1.42013      -0.231337     0.407825   0.737262
- -0.195171   -1.42013      1.0819        2.13308      0.849476   0.940987
-  0.462266   -0.297057    -1.60119       1.16229      1.4884    -0.884424
- -0.0533763   0.968318     0.940576      0.821807     0.510438  -1.27915
- -0.0519858  -1.26605      0.877244  …  -0.137369    -0.656015   0.998576
- -1.07295     0.589055     1.20088       0.0304239   -2.03648   -0.558671
- -1.5375     -0.478618    -0.215422     -1.28515     -0.56423   -0.325205
- -0.888524   -0.965731    -1.29345      -0.331366    -0.381236  -1.11992
- -0.826988   -1.37391     -0.433071      2.17574      0.289935  -0.360429
-  0.575328    0.00550041   0.825757  …  -0.923586    -2.01714   -0.306778
-  1.15188     0.0785565   -1.19987       0.0838508   -0.754019   0.343857
- -1.56586     1.57052      0.236125     -0.00960187  -0.720359   0.024162
-  ⋮                                  ⋱                          
-  0.652897   -0.484468    -0.578265      1.03703      0.785968   1.28826
- -0.440659   -0.916568     0.79379      -0.780555     1.20009    0.0291547
- -0.922021    0.386337    -0.469074  …   0.213715    -0.679665   1.20067
- -0.763333   -1.51942      0.984923     -1.88559      1.29553    0.908453
- -0.0783803  -0.666812     1.27396       1.48735     -1.6757     0.0283894
- -0.315348   -0.668266     0.983139     -2.09085      0.883177   1.06859
- -0.200508   -0.540768     0.495771      1.84787      1.43595    0.208945
- -1.0494      0.131153    -1.2425    …  -2.17324     -0.300242   0.0637963
-  0.710239   -2.14385      0.952414      2.08574     -0.369531  -1.28247
-  0.452632   -0.231337     2.13308       1.14538      0.60305   -1.24497
- -0.34094     0.407825     0.849476      0.60305     -0.319543   2.20151
- -0.503688    0.737262     0.940987     -1.24497      2.20151    0.861285</pre>
+  0.808288     1.29539    -1.45707    -0.679367    …   1.16225      1.70184
+  1.29539     -0.0401347   0.558171   -0.1036          0.938894    -0.393461
+ -1.45707      0.558171   -1.86708     1.79034         1.40001      0.773572
+ -0.679367    -0.1036      1.79034    -1.17117        -0.00718212  -1.39607
+  0.319691     0.48319     0.749465    0.877189       -0.0813753   -0.12452
+ -0.558467    -0.0516554   1.39446    -1.22875     …  -0.463411     0.891155
+  1.29691      0.13272    -1.09308    -0.777442       -2.29691     -1.94448
+  0.221109     0.901772   -1.83674    -1.53517         0.71271     -1.09901
+ -0.131222    -1.95005    -0.871313    0.749873       -0.512097     0.147288
+  1.06375     -0.507892    0.0770292  -1.07807        -0.388376    -0.296149
+  0.0488582   -1.70595     1.4607      0.898609    …   0.258443    -0.124589
+ -0.964277     1.65598    -0.609166   -0.372021        0.167224     1.22886
+ -1.57168      0.367311   -0.718299   -1.08922         0.994994     1.21551
+  ⋮                                                ⋱               
+ -0.0398698    1.19093     1.93918    -0.481359       -0.688618     0.7274
+  0.171639     1.04954    -1.45874    -1.13007        -0.338185     1.21151
+ -0.617088     1.28266     3.04803    -0.782317    …   1.44645     -1.33859
+  0.00011278   0.0951171   0.641481    1.11716        -0.826472     1.51133
+  0.468151    -0.106804   -0.669451   -1.10934        -0.439259     0.641367
+ -0.695767    -0.576123   -0.295149    0.525354        0.973504    -0.0769707
+  0.194844     0.582761   -0.144439    0.133758       -0.963        0.22916
+ -1.34654      0.311999    0.389583    0.393329    …  -0.300726     1.58836
+ -0.140269     1.52204    -0.2398     -1.13262         0.0982528    0.700468
+  0.00795371   0.129432    0.471772    0.00684241      0.998041     0.836767
+  1.16225      0.938894    1.40001    -0.00718212     -0.933037    -0.710069
+  1.70184     -0.393461    0.773572   -1.39607        -0.710069     0.0106993</pre>
 </div>
 
 </div>
@@ -14078,17 +14078,16 @@ eigmin(A::<b>Union{Hermitian{var"#s832", var"#s831"}, Hermitian{Complex{var"#s83
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  7.99 MiB
-  allocs estimate:  11
-  --------------
-  minimum time:     46.712 ms (0.00% GC)
-  median time:      63.461 ms (0.00% GC)
-  mean time:        66.430 ms (1.01% GC)
-  maximum time:     148.564 ms (0.00% GC)
-  --------------
-  samples:          76
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 81 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">46.532 ms</span> … <span class="ansi-magenta-fg">105.153 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">59.775 ms               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">61.800 ms</span> ± <span class="ansi-green-fg"> 12.228 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>1.07% ± 2.42%
+
+  ▄▁▁          ▃█<span class="ansi-blue-fg"> </span> <span class="ansi-green-fg">▁</span> ▁   ▃                                      
+  ███▇▄▄▁▄▇▆▁▇▆██<span class="ansi-blue-fg">▄</span>▇<span class="ansi-green-fg">█</span>▄█▁▆▆█▄▆▄▁▁▆▄▄▁▁▄▆▁▁▁▁▁▁▁▄▁▁▁▁▁▁▁▁▄▁▁▁▁▄▁▄ ▁
+  46.5 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>          100 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">7.99 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">11</span>.</pre>
 </div>
 
 </div>
@@ -14122,17 +14121,16 @@ eigmin(A::<b>Union{Hermitian{var"#s832", var"#s831"}, Hermitian{Complex{var"#s83
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  23.25 MiB
-  allocs estimate:  13
-  --------------
-  minimum time:     182.562 ms (0.00% GC)
-  median time:      199.440 ms (0.00% GC)
-  mean time:        202.016 ms (3.26% GC)
-  maximum time:     261.615 ms (23.64% GC)
-  --------------
-  samples:          25
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 22 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">197.248 ms</span> … <span class="ansi-magenta-fg">288.455 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>1.33% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">234.389 ms               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.28%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">231.239 ms</span> ± <span class="ansi-green-fg"> 23.282 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.63% ± 0.69%
+
+  ▁ █ ▁ ▁ ▁  ▁    ▁    █ <span class="ansi-green-fg"> </span>█<span class="ansi-blue-fg">▁</span>▁ █▁▁     ▁     ▁   ▁             ▁  
+  █▁█▁█▁█▁█▁▁█▁▁▁▁█▁▁▁▁█▁<span class="ansi-green-fg">▁</span>█<span class="ansi-blue-fg">█</span>█▁███▁▁▁▁▁█▁▁▁▁▁█▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁
+  197 ms<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>          288 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">23.25 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">13</span>.</pre>
 </div>
 
 </div>
@@ -14165,17 +14163,16 @@ eigmin(A::<b>Union{Hermitian{var"#s832", var"#s831"}, Hermitian{Complex{var"#s83
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  23.25 MiB
-  allocs estimate:  13
-  --------------
-  minimum time:     182.753 ms (0.00% GC)
-  median time:      193.160 ms (0.00% GC)
-  mean time:        200.891 ms (3.52% GC)
-  maximum time:     280.051 ms (23.02% GC)
-  --------------
-  samples:          25
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 22 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">215.624 ms</span> … <span class="ansi-magenta-fg">282.814 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 1.25%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">229.290 ms               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.44%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">235.513 ms</span> ± <span class="ansi-green-fg"> 19.433 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.66% ± 0.67%
+
+  █▁ █▁▁ █   <span class="ansi-blue-fg">█</span> ▁▁▁▁ <span class="ansi-green-fg">▁</span>              ▁ ▁  ▁    ▁      ▁         ▁  
+  ██▁███▁█▁▁▁<span class="ansi-blue-fg">█</span>▁████▁<span class="ansi-green-fg">█</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁█▁▁█▁▁▁▁█▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁█ ▁
+  216 ms<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>          283 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">23.25 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">13</span>.</pre>
 </div>
 
 </div>
@@ -14239,21 +14236,21 @@ eigmin(A::<b>Union{Hermitian{var"#s832", var"#s831"}, Hermitian{Complex{var"#s83
 <pre>SVD{Float64, Float64, Matrix{Float64}}
 U factor:
 5×3 Matrix{Float64}:
- -0.356016   0.766275   -0.399328
- -0.780844  -0.498635   -0.0919526
- -0.455531   0.327745    0.383707
- -0.106165  -0.235427   -0.650465
-  0.211554   0.0366507  -0.511612
+ -0.246849  -0.595292  -0.23902
+  0.407797   0.633393  -0.0315365
+  0.746221  -0.302242  -0.544096
+  0.397364  -0.36151    0.551056
+ -0.240882   0.149667  -0.584954
 singular values:
 3-element Vector{Float64}:
- 3.01796491771876
- 1.1196098423918268
- 0.7226774902878557
+ 2.626881694369155
+ 0.8802559276491184
+ 0.7439968442670016
 Vt factor:
 3×3 Matrix{Float64}:
- -0.88678   -0.187249    0.422563
-  0.127348  -0.977857   -0.166065
- -0.444302   0.0934509  -0.89099</pre>
+ -0.65339    -0.701302   0.285057
+ -0.754579    0.573122  -0.319595
+  0.0607604  -0.423918  -0.90366</pre>
 </div>
 
 </div>
@@ -14287,11 +14284,11 @@ Vt factor:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>5×3 Matrix{Float64}:
- -0.356016   0.766275   -0.399328
- -0.780844  -0.498635   -0.0919526
- -0.455531   0.327745    0.383707
- -0.106165  -0.235427   -0.650465
-  0.211554   0.0366507  -0.511612</pre>
+ -0.246849  -0.595292  -0.23902
+  0.407797   0.633393  -0.0315365
+  0.746221  -0.302242  -0.544096
+  0.397364  -0.36151    0.551056
+ -0.240882   0.149667  -0.584954</pre>
 </div>
 
 </div>
@@ -14326,9 +14323,9 @@ Vt factor:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>3×3 Matrix{Float64}:
- -0.88678   -0.187249    0.422563
-  0.127348  -0.977857   -0.166065
- -0.444302   0.0934509  -0.89099</pre>
+ -0.65339    -0.701302   0.285057
+ -0.754579    0.573122  -0.319595
+  0.0607604  -0.423918  -0.90366</pre>
 </div>
 
 </div>
@@ -14362,9 +14359,9 @@ Vt factor:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>3×3 adjoint(::Matrix{Float64}) with eltype Float64:
- -0.88678    0.127348  -0.444302
- -0.187249  -0.977857   0.0934509
-  0.422563  -0.166065  -0.89099</pre>
+ -0.65339   -0.754579   0.0607604
+ -0.701302   0.573122  -0.423918
+  0.285057  -0.319595  -0.90366</pre>
 </div>
 
 </div>
@@ -14398,9 +14395,9 @@ Vt factor:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>3-element Vector{Float64}:
- 3.01796491771876
- 1.1196098423918268
- 0.7226774902878557</pre>
+ 2.626881694369155
+ 0.8802559276491184
+ 0.7439968442670016</pre>
 </div>
 
 </div>
@@ -14445,17 +14442,16 @@ Vt factor:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  4.11 MiB
-  allocs estimate:  9
-  --------------
-  minimum time:     33.997 ms (0.00% GC)
-  median time:      36.721 ms (0.00% GC)
-  mean time:        37.286 ms (0.99% GC)
-  maximum time:     44.541 ms (9.68% GC)
-  --------------
-  samples:          135
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 80 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">43.721 ms</span> … <span class="ansi-magenta-fg">164.360 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">55.914 ms               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">62.593 ms</span> ± <span class="ansi-green-fg"> 20.651 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.82% ± 2.11%
+
+  ▆▆▁▃█▃▁▆▁<span class="ansi-blue-fg">▆</span>▁ ▃  <span class="ansi-green-fg"> </span>▃           ▁                                 
+  █████████<span class="ansi-blue-fg">█</span>█▁█▄▇<span class="ansi-green-fg">▇</span>█▇▄▁▄▄▄▁▁▄▄▄█▁▄▄▁▁▁▁▁▁▁▁▁▁▁▄▁▁▄▁▄▄▁▄▁▁▁▁▁▁▁▄ ▁
+  43.7 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>          121 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">4.11 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">9</span>.</pre>
 </div>
 
 </div>
@@ -14488,17 +14484,16 @@ Vt factor:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  17.23 MiB
-  allocs estimate:  12
-  --------------
-  minimum time:     67.841 ms (0.00% GC)
-  median time:      72.838 ms (0.00% GC)
-  mean time:        73.709 ms (1.66% GC)
-  maximum time:     88.586 ms (1.76% GC)
-  --------------
-  samples:          68
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 60 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">70.195 ms</span> … <span class="ansi-magenta-fg">122.853 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">79.697 ms               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">83.609 ms</span> ± <span class="ansi-green-fg"> 11.813 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>1.44% ± 1.89%
+
+    ▅▅▅█▂▂▂▂<span class="ansi-blue-fg"> </span>   ▂<span class="ansi-green-fg"> </span>▅                                             
+  ▅▁████████<span class="ansi-blue-fg">▁</span>▅▅██<span class="ansi-green-fg">█</span>█▅▅▁▁▁▅▁█▁▁▅▅▁▁▁█▅▅▅█▁▅▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅ ▁
+  70.2 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>          123 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">17.23 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">12</span>.</pre>
 </div>
 
 </div>
@@ -14561,16 +14556,32 @@ Vt factor:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>include group.jl for user defined matrix generators
-verify download of index files...
-reading database
-adding metadata...
-adding svd data...
-writing database
-used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML index
-downloading: https://sparse.tamu.edu/MM/Boeing/bcsstk38.tar.gz
-typeof(A) = SparseMatrixCSC{Float64, Int64}
+<pre>typeof(A) = SparseMatrixCSC{Float64, Int64}
 typeof(Afull) = Matrix{Float64}
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>┌ Info: verify download of index files...
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/MatrixDepot.jl:139
+┌ Info: reading database
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:23
+┌ Info: adding metadata...
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:67
+┌ Info: adding svd data...
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:69
+┌ Info: writing database
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:74
+┌ Info: used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML index
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/MatrixDepot.jl:141
+┌ Info: downloading: https://sparse.tamu.edu/MM/Boeing/bcsstk38.tar.gz
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:155
 </pre>
 </div>
 </div>
@@ -14617,32 +14628,32 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre><span class="ansi-bold">                     Sparsity Pattern</span>
-<span class="ansi-black-intense-fg">        ┌──────────────────────────────────────────┐</span>    
-      <span class="ansi-black-intense-fg">1</span><span class="ansi-black-intense-fg"> │</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
-       <span class="ansi-black-intense-fg"> │</span><span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀<span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⡳</span><span class="ansi-magenta-fg">⣒</span>⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⣛</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀<span class="ansi-magenta-fg">⢹</span><span class="ansi-magenta-fg">⢪</span><span class="ansi-magenta-fg">⡿</span><span class="ansi-magenta-fg">⣯</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⢩</span><span class="ansi-magenta-fg">⢀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀<span class="ansi-magenta-fg">⡄</span>⠀⠀<span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣬</span>⠀<span class="ansi-magenta-fg">⠠</span><span class="ansi-magenta-fg">⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⡀</span><span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠃</span><span class="ansi-magenta-fg">⢒</span><span class="ansi-magenta-fg">⡛</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⢴</span><span class="ansi-magenta-fg">⣆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⣠</span><span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⡀</span><span class="ansi-magenta-fg">⢀</span><span class="ansi-magenta-fg">⣜</span><span class="ansi-magenta-fg">⡿</span><span class="ansi-magenta-fg">⣯</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⠇</span><span class="ansi-magenta-fg">⠼</span><span class="ansi-magenta-fg">⠤</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢛</span><span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⠟</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠳</span><span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠒</span><span class="ansi-magenta-fg">⡇</span>⠀<span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣾</span><span class="ansi-magenta-fg">⢰</span>⠀<span class="ansi-magenta-fg">⢠</span>⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠠</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢚</span><span class="ansi-magenta-fg">⣛</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣔</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⢘</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⡿</span><span class="ansi-magenta-fg">⡇</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⡶</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⠯</span><span class="ansi-magenta-fg">⡿</span><span class="ansi-magenta-fg">⣯</span><span class="ansi-magenta-fg">⡽</span><span class="ansi-magenta-fg">⡗</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢠</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⡧</span><span class="ansi-magenta-fg">⢷</span><span class="ansi-magenta-fg">⠯</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣀</span>⠀<span class="ansi-magenta-fg">⢀</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠁</span>⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⣸</span><span class="ansi-magenta-fg">⡇</span><span class="ansi-magenta-fg">⣆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠂</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠰</span><span class="ansi-magenta-fg">⠶</span><span class="ansi-magenta-fg">⠾</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠃</span><span class="ansi-magenta-fg">⠐</span>⠀⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⡷</span><span class="ansi-magenta-fg">⡆</span>⠀⠀<span class="ansi-magenta-fg">⢘</span><span class="ansi-magenta-fg">⡒</span><span class="ansi-magenta-fg">⠲</span><span class="ansi-magenta-fg">⡖</span>⠀<span class="ansi-magenta-fg">⡆</span><span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⠯</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣾</span><span class="ansi-magenta-fg">⣣</span>⠀<span class="ansi-magenta-fg">⠄</span><span class="ansi-magenta-fg">⠑</span><span class="ansi-magenta-fg">⠄</span><span class="ansi-magenta-fg">⠆</span><span class="ansi-magenta-fg">⠆</span><span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠾</span><span class="ansi-magenta-fg">⣻</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⡃</span><span class="ansi-magenta-fg">⡀</span><span class="ansi-magenta-fg">⠒</span><span class="ansi-magenta-fg">⠂</span><span class="ansi-magenta-fg">⠂</span>⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢲</span><span class="ansi-magenta-fg">⠰</span>⠀<span class="ansi-magenta-fg">⠄</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠨</span><span class="ansi-magenta-fg">⡿</span><span class="ansi-magenta-fg">⣯</span><span class="ansi-magenta-fg">⡙</span><span class="ansi-magenta-fg">⢨</span><span class="ansi-magenta-fg">⡃</span>⠀<span class="ansi-black-intense-fg">│</span>    
-       <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠁</span>⠀⠀⠀<span class="ansi-magenta-fg">⢉</span>⠀<span class="ansi-magenta-fg">⢸</span><span class="ansi-magenta-fg">⠦</span><span class="ansi-magenta-fg">⠑</span><span class="ansi-magenta-fg">⠄</span><span class="ansi-magenta-fg">⠸</span>⠀<span class="ansi-magenta-fg">⡓</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⣮</span><span class="ansi-magenta-fg">⡇</span><span class="ansi-black-intense-fg">│</span>    
-   <span class="ansi-black-intense-fg">8032</span><span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠠</span>⠀<span class="ansi-magenta-fg">⣠</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⢀</span><span class="ansi-magenta-fg">⢤</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠠</span><span class="ansi-magenta-fg">⠤</span><span class="ansi-magenta-fg">⠨</span><span class="ansi-magenta-fg">⠅</span><span class="ansi-magenta-fg">⠈</span>⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠮</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-black-intense-fg">│</span>    
-<span class="ansi-black-intense-fg">        └──────────────────────────────────────────┘</span>    
-<span class="ansi-black-intense-fg">        1</span><span class="ansi-black-intense-fg">                    </span><span class="ansi-black-intense-fg">                   8032</span>
-                        nz = 355460</pre>
+<pre>        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-bold">Sparsity Pattern</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    
+        <span class="ansi-black-intense-fg">┌──────────────────────────────────────────┐</span>    
+      <span class="ansi-black-intense-fg">1</span> <span class="ansi-black-intense-fg">│</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
+        <span class="ansi-black-intense-fg">│</span><span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀<span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⡳</span><span class="ansi-magenta-fg">⣒</span>⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⣛</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀<span class="ansi-magenta-fg">⢹</span><span class="ansi-magenta-fg">⢪</span><span class="ansi-magenta-fg">⡿</span><span class="ansi-magenta-fg">⣯</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⢩</span><span class="ansi-magenta-fg">⢀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀<span class="ansi-magenta-fg">⡄</span>⠀⠀<span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣬</span>⠀<span class="ansi-magenta-fg">⠠</span><span class="ansi-magenta-fg">⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⡀</span><span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠃</span><span class="ansi-magenta-fg">⢒</span><span class="ansi-magenta-fg">⡛</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⢴</span><span class="ansi-magenta-fg">⣆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⣠</span><span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⡀</span><span class="ansi-magenta-fg">⢀</span><span class="ansi-magenta-fg">⣜</span><span class="ansi-magenta-fg">⡿</span><span class="ansi-magenta-fg">⣯</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⠇</span><span class="ansi-magenta-fg">⠼</span><span class="ansi-magenta-fg">⠤</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢛</span><span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⠟</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠳</span><span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠒</span><span class="ansi-magenta-fg">⡇</span>⠀<span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣾</span><span class="ansi-magenta-fg">⢰</span>⠀<span class="ansi-magenta-fg">⢠</span>⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠠</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢚</span><span class="ansi-magenta-fg">⣛</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣔</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⢘</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⡿</span><span class="ansi-magenta-fg">⡇</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⡶</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⠯</span><span class="ansi-magenta-fg">⡿</span><span class="ansi-magenta-fg">⣯</span><span class="ansi-magenta-fg">⡽</span><span class="ansi-magenta-fg">⡗</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢠</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⡧</span><span class="ansi-magenta-fg">⢷</span><span class="ansi-magenta-fg">⠯</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣀</span>⠀<span class="ansi-magenta-fg">⢀</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠁</span>⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⣸</span><span class="ansi-magenta-fg">⡇</span><span class="ansi-magenta-fg">⣆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠂</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠰</span><span class="ansi-magenta-fg">⠶</span><span class="ansi-magenta-fg">⠾</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣄</span>⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠃</span><span class="ansi-magenta-fg">⠐</span>⠀⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⡷</span><span class="ansi-magenta-fg">⡆</span>⠀⠀<span class="ansi-magenta-fg">⢘</span><span class="ansi-magenta-fg">⡒</span><span class="ansi-magenta-fg">⠲</span><span class="ansi-magenta-fg">⡖</span>⠀<span class="ansi-magenta-fg">⡆</span><span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⠯</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣾</span><span class="ansi-magenta-fg">⣣</span>⠀<span class="ansi-magenta-fg">⠄</span><span class="ansi-magenta-fg">⠑</span><span class="ansi-magenta-fg">⠄</span><span class="ansi-magenta-fg">⠆</span><span class="ansi-magenta-fg">⠆</span><span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠾</span><span class="ansi-magenta-fg">⣻</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⣿</span><span class="ansi-magenta-fg">⡃</span><span class="ansi-magenta-fg">⡀</span><span class="ansi-magenta-fg">⠒</span><span class="ansi-magenta-fg">⠂</span><span class="ansi-magenta-fg">⠂</span>⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢲</span><span class="ansi-magenta-fg">⠰</span>⠀<span class="ansi-magenta-fg">⠄</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠨</span><span class="ansi-magenta-fg">⡿</span><span class="ansi-magenta-fg">⣯</span><span class="ansi-magenta-fg">⡙</span><span class="ansi-magenta-fg">⢨</span><span class="ansi-magenta-fg">⡃</span>⠀<span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠁</span>⠀⠀⠀<span class="ansi-magenta-fg">⢉</span>⠀<span class="ansi-magenta-fg">⢸</span><span class="ansi-magenta-fg">⠦</span><span class="ansi-magenta-fg">⠑</span><span class="ansi-magenta-fg">⠄</span><span class="ansi-magenta-fg">⠸</span>⠀<span class="ansi-magenta-fg">⡓</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⣮</span><span class="ansi-magenta-fg">⡇</span><span class="ansi-black-intense-fg">│</span>    
+   <span class="ansi-black-intense-fg">8032</span> <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠠</span>⠀<span class="ansi-magenta-fg">⣠</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⢀</span><span class="ansi-magenta-fg">⢤</span><span class="ansi-magenta-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠠</span><span class="ansi-magenta-fg">⠤</span><span class="ansi-magenta-fg">⠨</span><span class="ansi-magenta-fg">⠅</span><span class="ansi-magenta-fg">⠈</span>⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠮</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-black-intense-fg">│</span>    
+        <span class="ansi-black-intense-fg">└──────────────────────────────────────────┘</span>    
+        ⠀<span class="ansi-black-intense-fg">1</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">8032</span>⠀    
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀355460 nonzeros⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    </pre>
 </div>
 
 </div>
@@ -14653,7 +14664,7 @@ typeof(Afull) = Matrix{Float64}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># top 5 eigenvalues by LAPACK (QR algorithm)</span>
@@ -14675,27 +14686,9 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> 40.785718 seconds (12.07 k allocations: 495.758 MiB, 0.14% gc time, 0.03% compilation time)
+<pre> 47.712439 seconds (12.08 k allocations: 495.684 MiB, 0.47% gc time, 0.03% compilation time)
 </pre>
 </div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[27]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>5-element Vector{Float64}:
- 1.0065808940237148e9
- 2.575326809321939e9
- 2.5900252061972733e9
- 3.9998475579818976e11
- 4.0423074877278925e11</pre>
-</div>
-
 </div>
 
 </div>
@@ -14704,7 +14697,7 @@ typeof(Afull) = Matrix{Float64}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Arpack</span>
@@ -14716,77 +14709,16 @@ typeof(Afull) = Matrix{Float64}
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>  2.266514 seconds (6.19 M allocations: 362.746 MiB, 6.80% gc time, 98.89% compilation time)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[28]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>([4.0423074877278925e11, 3.999847557981896e11, 2.5900252061972294e9, 2.5753268093219604e9, 1.0065808940236917e9], 5, 3, 44, [1.0868122619328366e6, -421656.33136724087, 89930.2795253292, -1.5161178968628922e6, 171347.63736800384, -529000.7873888192, 1.0162884032162477e6, 162954.54591127564, 1.1369647638832035e6, 2313.8744666622024  …  961942.1221242767, -1.8796565853767458e6, 1.3277287718225361e6, -330471.6262851274, 56344.272035333306, 469345.1380896384, 595080.3318222909, -1.0466780493786195e6, 630502.4715397512, 220867.80237104092])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@benchmark</span> <span class="n">eigs</span><span class="p">(</span><span class="o">$</span><span class="n">A</span><span class="p">;</span> <span class="n">nev</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">ritzvec</span><span class="o">=</span><span class="kc">false</span><span class="p">,</span> <span class="n">which</span><span class="o">=:</span><span class="n">LM</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[29]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  1.55 MiB
-  allocs estimate:  314
-  --------------
-  minimum time:     23.636 ms (0.00% GC)
-  median time:      27.871 ms (0.00% GC)
-  mean time:        30.337 ms (0.00% GC)
-  maximum time:     53.288 ms (0.00% GC)
-  --------------
-  samples:          165
-  evals/sample:     1</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 

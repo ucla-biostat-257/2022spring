@@ -13125,14 +13125,14 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Julia Version 1.6.0
-Commit f9720dc2eb (2021-03-24 12:55 UTC)
+<pre>Julia Version 1.7.1
+Commit ac5cc99908 (2021-12-22 19:35 UTC)
 Platform Info:
-  OS: macOS (x86_64-apple-darwin19.6.0)
+  OS: macOS (x86_64-apple-darwin19.5.0)
   CPU: Intel(R) Core(TM) i7-6920HQ CPU @ 2.90GHz
   WORD_SIZE: 64
   LIBM: libopenlibm
-  LLVM: libLLVM-11.0.1 (ORCJIT, skylake)
+  LLVM: libLLVM-12.0.1 (ORCJIT, skylake)
 Environment:
   JULIA_EDITOR = code
   JULIA_NUM_THREADS = 4
@@ -13300,10 +13300,10 @@ Environment:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>linreg_cholesky(y, X) = [0.18663443776194222, 0.3425458137678085, 0.29576444004323654]
-linreg_qr(y, X) = [0.1866344377619422, 0.3425458137678086, 0.29576444004323627]
-linreg_sweep(y, X) = [0.18663443776194222, 0.3425458137678085, 0.2957644400432365]
-linreg_svd(y, X) = [0.18663443776194236, 0.3425458137678091, 0.2957644400432366]
+<pre>linreg_cholesky(y, X) = [-0.07196570434574734, -0.1357569945585938, -0.1882019968945651]
+linreg_qr(y, X) = [-0.0719657043457473, -0.13575699455859397, -0.18820199689456493]
+linreg_sweep(y, X) = [-0.07196570434574734, -0.1357569945585939, -0.188201996894565]
+linreg_svd(y, X) = [-0.07196570434574728, -0.13575699455859372, -0.188201996894565]
 </pre>
 </div>
 </div>
@@ -13340,17 +13340,16 @@ linreg_svd(y, X) = [0.18663443776194236, 0.3425458137678091, 0.2957644400432366]
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  708.25 KiB
-  allocs estimate:  6
-  --------------
-  minimum time:     1.745 ms (0.00% GC)
-  median time:      2.110 ms (0.00% GC)
-  mean time:        2.362 ms (1.85% GC)
-  maximum time:     13.229 ms (0.00% GC)
-  --------------
-  samples:          2114
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 2871 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">1.284 ms</span> … <span class="ansi-magenta-fg">  5.723 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 58.60%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">1.651 ms               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">1.730 ms</span> ± <span class="ansi-green-fg">477.394 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>2.64% ±  7.68%
+
+  ▂    █<span class="ansi-blue-fg">▄</span>▂<span class="ansi-green-fg"> </span>                                                    
+  █▄▃▃▆█<span class="ansi-blue-fg">█</span>█<span class="ansi-green-fg">▇</span>▆▄▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▂▁▁▂▂▁▁▂▁▁▂▁▁▂▁▁▁▁▂▁▂▂▂ ▃
+  1.28 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>        4.64 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">708.22 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">6</span>.</pre>
 </div>
 
 </div>
@@ -13383,17 +13382,16 @@ linreg_svd(y, X) = [0.18663443776194236, 0.3425458137678091, 0.2957644400432366]
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  2.99 MiB
-  allocs estimate:  6
-  --------------
-  minimum time:     8.724 ms (0.00% GC)
-  median time:      11.045 ms (0.00% GC)
-  mean time:        11.182 ms (1.63% GC)
-  maximum time:     16.231 ms (16.84% GC)
-  --------------
-  samples:          447
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 399 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold"> 9.087 ms</span> … <span class="ansi-magenta-fg">65.345 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">11.367 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">12.506 ms</span> ± <span class="ansi-green-fg"> 4.600 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>1.90% ± 5.57%
+
+    ▅▃█▆<span class="ansi-blue-fg">▂</span>▄▁<span class="ansi-green-fg"> </span>                                                   
+  ▃█████<span class="ansi-blue-fg">█</span>██<span class="ansi-green-fg">▇</span>▅▄▃▄▄▄▄▃▁▃▃▂▃▃▃▃▂▃▃▂▂▃▁▂▂▁▁▁▁▁▁▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂ ▃
+  9.09 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>        31.4 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">2.99 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">6</span>.</pre>
 </div>
 
 </div>
@@ -13426,17 +13424,16 @@ linreg_svd(y, X) = [0.18663443776194236, 0.3425458137678091, 0.2957644400432366]
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  4.01 MiB
-  allocs estimate:  1836
-  --------------
-  minimum time:     8.699 ms (0.00% GC)
-  median time:      10.068 ms (0.00% GC)
-  mean time:        10.455 ms (3.58% GC)
-  maximum time:     16.324 ms (25.08% GC)
-  --------------
-  samples:          479
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 430 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold"> 8.977 ms</span> … <span class="ansi-magenta-fg">24.742 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">11.173 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">11.625 ms</span> ± <span class="ansi-green-fg"> 2.096 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>3.86% ± 9.02%
+
+       ▃█▆▃▅▃ ▂<span class="ansi-blue-fg">▆</span>▃▁<span class="ansi-green-fg"> </span>▃▂                                          
+  ▃▃▂▅▅██████▇█<span class="ansi-blue-fg">█</span>██<span class="ansi-green-fg">█</span>██▇▆▄▅▄▄▃▃▃▃▃▁▃▂▃▁▃▃▄▂▂▁▂▃▃▂▁▃▃▃▃▁▁▃▁▁▂▂▂▃ ▄
+  8.98 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>        18.7 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">3.95 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">1828</span>.</pre>
 </div>
 
 </div>
@@ -13469,17 +13466,16 @@ linreg_svd(y, X) = [0.18663443776194236, 0.3425458137678091, 0.2957644400432366]
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  8.06 MiB
-  allocs estimate:  14
-  --------------
-  minimum time:     25.919 ms (0.00% GC)
-  median time:      29.107 ms (0.00% GC)
-  mean time:        29.735 ms (1.72% GC)
-  maximum time:     36.948 ms (9.59% GC)
-  --------------
-  samples:          169
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 153 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">26.924 ms</span> … <span class="ansi-magenta-fg">44.321 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 7.95%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">32.201 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">32.728 ms</span> ± <span class="ansi-green-fg"> 3.975 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>1.67% ± 3.28%
+
+       ▁▆█▃▁ ▁         <span class="ansi-blue-fg"> </span> <span class="ansi-green-fg"> </span>                                     
+  ▃▁▃▃▇█████▆█▃▆▄▆▃▄▃▄▇<span class="ansi-blue-fg">▄</span>▄<span class="ansi-green-fg">▇</span>▃▇▇▇▆▄█▇▄▆▃▇▁▄▄▄▃▄▃▃▆▄▁▁▄▃▃▇▃▃▁▁▃▁▄ ▃
+  26.9 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>        41.8 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">8.06 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">14</span>.</pre>
 </div>
 
 </div>

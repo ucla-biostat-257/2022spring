@@ -13099,6 +13099,14 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Iterative-Methods-for-Solving-Linear-Equations" data-toc-modified-id="Iterative-Methods-for-Solving-Linear-Equations-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Iterative Methods for Solving Linear Equations</a></div><div class="lev2 toc-item"><a href="#Introduction" data-toc-modified-id="Introduction-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Introduction</a></div><div class="lev2 toc-item"><a href="#PageRank-problem" data-toc-modified-id="PageRank-problem-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>PageRank problem</a></div><div class="lev2 toc-item"><a href="#Jacobi-method" data-toc-modified-id="Jacobi-method-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Jacobi method</a></div><div class="lev2 toc-item"><a href="#Gauss-Seidel-method" data-toc-modified-id="Gauss-Seidel-method-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Gauss-Seidel method</a></div><div class="lev2 toc-item"><a href="#Successive-over-relaxation-(SOR)" data-toc-modified-id="Successive-over-relaxation-(SOR)-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Successive over-relaxation (SOR)</a></div><div class="lev2 toc-item"><a href="#Conjugate-gradient-method" data-toc-modified-id="Conjugate-gradient-method-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Conjugate gradient method</a></div><div class="lev2 toc-item"><a href="#MatrixDepot.jl" data-toc-modified-id="MatrixDepot.jl-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>MatrixDepot.jl</a></div><div class="lev2 toc-item"><a href="#Numerical-examples" data-toc-modified-id="Numerical-examples-18"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Numerical examples</a></div><div class="lev3 toc-item"><a href="#Generate-test-matrix" data-toc-modified-id="Generate-test-matrix-181"><span class="toc-item-num">1.8.1&nbsp;&nbsp;</span>Generate test matrix</a></div><div class="lev3 toc-item"><a href="#Matrix-vector-muliplication" data-toc-modified-id="Matrix-vector-muliplication-182"><span class="toc-item-num">1.8.2&nbsp;&nbsp;</span>Matrix-vector muliplication</a></div><div class="lev3 toc-item"><a href="#Dense-solve-via-Cholesky" data-toc-modified-id="Dense-solve-via-Cholesky-183"><span class="toc-item-num">1.8.3&nbsp;&nbsp;</span>Dense solve via Cholesky</a></div><div class="lev3 toc-item"><a href="#Jacobi-solver" data-toc-modified-id="Jacobi-solver-184"><span class="toc-item-num">1.8.4&nbsp;&nbsp;</span>Jacobi solver</a></div><div class="lev3 toc-item"><a href="#Gauss-Seidal" data-toc-modified-id="Gauss-Seidal-185"><span class="toc-item-num">1.8.5&nbsp;&nbsp;</span>Gauss-Seidal</a></div><div class="lev3 toc-item"><a href="#SOR" data-toc-modified-id="SOR-186"><span class="toc-item-num">1.8.6&nbsp;&nbsp;</span>SOR</a></div><div class="lev3 toc-item"><a href="#Conjugate-Gradient" data-toc-modified-id="Conjugate-Gradient-187"><span class="toc-item-num">1.8.7&nbsp;&nbsp;</span>Conjugate Gradient</a></div></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Iterative-Methods-for-Solving-Linear-Equations">Iterative Methods for Solving Linear Equations<a class="anchor-link" href="#Iterative-Methods-for-Solving-Linear-Equations">&#182;</a></h1>
 </div>
 </div>
@@ -13125,14 +13133,14 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Julia Version 1.6.0
-Commit f9720dc2eb (2021-03-24 12:55 UTC)
+<pre>Julia Version 1.7.1
+Commit ac5cc99908 (2021-12-22 19:35 UTC)
 Platform Info:
-  OS: macOS (x86_64-apple-darwin19.6.0)
+  OS: macOS (x86_64-apple-darwin19.5.0)
   CPU: Intel(R) Core(TM) i7-6920HQ CPU @ 2.90GHz
   WORD_SIZE: 64
   LIBM: libopenlibm
-  LLVM: libLLVM-11.0.1 (ORCJIT, skylake)
+  LLVM: libLLVM-12.0.1 (ORCJIT, skylake)
 Environment:
   JULIA_EDITOR = code
   JULIA_NUM_THREADS = 4
@@ -13277,7 +13285,7 @@ $$</p>
 <h2 id="Conjugate-gradient-method">Conjugate gradient method<a class="anchor-link" href="#Conjugate-gradient-method">&#182;</a></h2><ul>
 <li><p><strong>Conjugate gradient and its variants are the top-notch iterative methods for solving huge, structured linear systems.</strong></p>
 </li>
-<li><p>A UCLA invention! Hestenes and Steifel in 60s.</p>
+<li><p>A UCLA invention! Hestenes and Stiefel in 60s.</p>
 </li>
 <li><p>Solving $\mathbf{A} \mathbf{x} = \mathbf{b}$ is equivalent to minimizing the quadratic function $\frac{1}{2} \mathbf{x}^T \mathbf{A} \mathbf{x} - \mathbf{b}^T \mathbf{x}$.</p>
 </li>
@@ -13339,14 +13347,25 @@ $$</p>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>include group.jl for user defined matrix generators
-verify download of index files...
-reading database
-adding metadata...
-adding svd data...
-writing database
-used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML index
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>┌ Info: verify download of index files...
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/MatrixDepot.jl:139
+┌ Info: creating database file
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:63
+┌ Info: reading index files
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:81
+┌ Info: downloading: https://sparse.tamu.edu/files/ss_index.mat
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/downloadsp.jl:90
+┌ Info: dowloading index file https://math.nist.gov/MatrixMarket/matrices.html
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/downloadmm.jl:83
+┌ Info: adding metadata...
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:67
+┌ Info: adding svd data...
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:69
+┌ Info: writing database
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/download.jl:74
+┌ Info: used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML index
+└ @ MatrixDepot /Users/huazhou/.julia/packages/MatrixDepot/GEDc3/src/MatrixDepot.jl:141
 </pre>
 </div>
 </div>
@@ -13695,38 +13714,50 @@ used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML
 
 <div class="output_area">
 
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>┌ Info: Precompiling UnicodePlots [b8865327-cd53-5732-bb35-84acbb429228]
+└ @ Base loading.jl:1423
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
     <div class="prompt output_prompt">Out[6]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre><span class="ansi-bold">                    Sparsity Pattern</span>
-<span class="ansi-black-intense-fg">       ┌──────────────────────────────────────────┐</span>    
-     <span class="ansi-black-intense-fg">1</span><span class="ansi-black-intense-fg"> │</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠘</span><span class="ansi-blue-fg">⢄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
-      <span class="ansi-black-intense-fg"> │</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠉</span><span class="ansi-blue-fg">⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
-      <span class="ansi-black-intense-fg"> │</span><span class="ansi-blue-fg">⠒</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠱</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢢</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀<span class="ansi-blue-fg">⠣</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⠤</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀<span class="ansi-blue-fg">⠱</span><span class="ansi-blue-fg">⣀</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠱</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⡄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠘</span><span class="ansi-blue-fg">⢄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠱</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠉</span><span class="ansi-blue-fg">⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠒</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢢</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠣</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⠤</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠱</span><span class="ansi-blue-fg">⣀</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⡄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠘</span><span class="ansi-blue-fg">⢄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠉</span><span class="ansi-blue-fg">⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠒</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢢</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠣</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⠤</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠱</span><span class="ansi-blue-fg">⣀</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢆</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⡄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠘</span><span class="ansi-blue-fg">⢄</span>⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢆</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠉</span><span class="ansi-blue-fg">⢆</span>⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠒</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢢</span>⠀⠀<span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠣</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢆</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⠤</span><span class="ansi-black-intense-fg">│</span>    
-      <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠱</span><span class="ansi-blue-fg">⣀</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-black-intense-fg">│</span>    
-   <span class="ansi-black-intense-fg">100</span><span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⡄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-black-intense-fg">│</span>    
-<span class="ansi-black-intense-fg">       └──────────────────────────────────────────┘</span>    
-<span class="ansi-black-intense-fg">       1</span><span class="ansi-black-intense-fg">                    </span><span class="ansi-black-intense-fg">                    100</span>
-                        nz = 460</pre>
+<pre>       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-bold">Sparsity Pattern</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    
+       <span class="ansi-black-intense-fg">┌──────────────────────────────────────────┐</span>    
+     <span class="ansi-black-intense-fg">1</span> <span class="ansi-black-intense-fg">│</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠘</span><span class="ansi-blue-fg">⢄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
+       <span class="ansi-black-intense-fg">│</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠉</span><span class="ansi-blue-fg">⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
+       <span class="ansi-black-intense-fg">│</span><span class="ansi-blue-fg">⠒</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠱</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢢</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀<span class="ansi-blue-fg">⠣</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⠤</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀<span class="ansi-blue-fg">⠱</span><span class="ansi-blue-fg">⣀</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠱</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⡄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠘</span><span class="ansi-blue-fg">⢄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠱</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠉</span><span class="ansi-blue-fg">⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠒</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢢</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠣</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⠤</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠱</span><span class="ansi-blue-fg">⣀</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⡄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠘</span><span class="ansi-blue-fg">⢄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠉</span><span class="ansi-blue-fg">⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠒</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢢</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠣</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⠤</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠱</span><span class="ansi-blue-fg">⣀</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢆</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⡄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠘</span><span class="ansi-blue-fg">⢄</span>⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢆</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠉</span><span class="ansi-blue-fg">⢆</span>⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠒</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⢢</span>⠀⠀<span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠣</span><span class="ansi-blue-fg">⢄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢆</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⠤</span><span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠱</span><span class="ansi-blue-fg">⣀</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-black-intense-fg">│</span>    
+   <span class="ansi-black-intense-fg">100</span> <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠑</span><span class="ansi-blue-fg">⡄</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-black-intense-fg">│</span>    
+       <span class="ansi-black-intense-fg">└──────────────────────────────────────────┘</span>    
+       ⠀<span class="ansi-black-intense-fg">1</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">100</span>⠀    
+       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀460 nonzeros⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    </pre>
 </div>
 
 </div>
@@ -13855,32 +13886,32 @@ used remote sites are sparse.tamu.edu with MAT index and math.nist.gov with HTML
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre><span class="ansi-bold">                   Sparsity Pattern</span>
-<span class="ansi-black-intense-fg">      ┌──────────────────────────────────────────┐</span>    
-    <span class="ansi-black-intense-fg">1</span><span class="ansi-black-intense-fg"> │</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⡄</span>⠀⠀<span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-magenta-fg">⠸</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣤</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
-     <span class="ansi-black-intense-fg"> │</span>⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-blue-fg">⡀</span><span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-red-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
-     <span class="ansi-black-intense-fg"> │</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-red-fg">⣤</span><span class="ansi-magenta-fg">⡘</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣀</span>⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠃</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⠶</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-red-fg">⠻</span><span class="ansi-red-fg">⢆</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-blue-fg">⢆</span>⠀⠀<span class="ansi-magenta-fg">⣀</span><span class="ansi-red-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-magenta-fg">⡀</span>⠀<span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⡆</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⡀</span>⠀<span class="ansi-magenta-fg">⢸</span><span class="ansi-magenta-fg">⣆</span>⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣤</span>⠀<span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⡄</span>⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⣧</span>⠀<span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀<span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠉</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠑</span><span class="ansi-magenta-fg">⠲</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-red-fg">⠱</span><span class="ansi-red-fg">⣦</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-magenta-fg">⠒</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-magenta-fg">⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢠</span><span class="ansi-magenta-fg">⣤</span>⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-red-fg">⠈</span><span class="ansi-red-fg">⠛</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-magenta-fg">⡄</span>⠀<span class="ansi-magenta-fg">⢠</span><span class="ansi-magenta-fg">⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-red-fg">⡀</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-magenta-fg">⠆</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢆</span><span class="ansi-red-fg">⡀</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢆</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⠶</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⡈</span><span class="ansi-red-fg">⠻</span><span class="ansi-red-fg">⣦</span><span class="ansi-magenta-fg">⡈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⣀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠶</span><span class="ansi-magenta-fg">⣦</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠱</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠱</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-magenta-fg">⠰</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⣤</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⡀</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-red-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠃</span>⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-red-fg">⣤</span><span class="ansi-red-fg">⡀</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣀</span>⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠃</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢀</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-magenta-fg">⠤</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-red-fg">⠻</span><span class="ansi-red-fg">⢆</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-magenta-fg">⠦</span><span class="ansi-blue-fg">⢄</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-magenta-fg">⣀</span><span class="ansi-red-fg">⡀</span>⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-red-fg">⡀</span>⠀<span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⡀</span>⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⣷</span>⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣀</span>⠀⠀<span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣤</span>⠀<span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⡇</span>⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-magenta-fg">⠸</span><span class="ansi-magenta-fg">⣧</span>⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠉</span>⠀⠀<span class="ansi-blue-fg">⠱</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-red-fg">⠱</span><span class="ansi-red-fg">⣦</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-magenta-fg">⠶</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢠</span><span class="ansi-magenta-fg">⣤</span>⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-magenta-fg">⡌</span><span class="ansi-red-fg">⠛</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-black-intense-fg">│</span>    
-     <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-red-fg">⡀</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣀</span>⠀<span class="ansi-black-intense-fg">│</span>    
-   <span class="ansi-black-intense-fg">96</span><span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⡆</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⣷</span>⠀⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-black-intense-fg">│</span>    
-<span class="ansi-black-intense-fg">      └──────────────────────────────────────────┘</span>    
-<span class="ansi-black-intense-fg">      1</span><span class="ansi-black-intense-fg">                    </span><span class="ansi-black-intense-fg">                     96</span>
-                       nz = 1256</pre>
+<pre>      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-bold">Sparsity Pattern</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    
+      <span class="ansi-black-intense-fg">┌──────────────────────────────────────────┐</span>    
+    <span class="ansi-black-intense-fg">1</span> <span class="ansi-black-intense-fg">│</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⡄</span>⠀⠀<span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-magenta-fg">⠸</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣤</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
+      <span class="ansi-black-intense-fg">│</span>⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-blue-fg">⡀</span><span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-red-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
+      <span class="ansi-black-intense-fg">│</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-red-fg">⣤</span><span class="ansi-magenta-fg">⡘</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣀</span>⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠃</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⠶</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-red-fg">⠻</span><span class="ansi-red-fg">⢆</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-blue-fg">⢆</span>⠀⠀<span class="ansi-magenta-fg">⣀</span><span class="ansi-red-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-magenta-fg">⡀</span>⠀<span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⡆</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⡀</span>⠀<span class="ansi-magenta-fg">⢸</span><span class="ansi-magenta-fg">⣆</span>⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣤</span>⠀<span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⡄</span>⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⣧</span>⠀<span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀<span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠉</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-blue-fg">⠑</span><span class="ansi-magenta-fg">⠲</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-red-fg">⠱</span><span class="ansi-red-fg">⣦</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-magenta-fg">⠒</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-magenta-fg">⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢠</span><span class="ansi-magenta-fg">⣤</span>⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-red-fg">⠈</span><span class="ansi-red-fg">⠛</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-magenta-fg">⡄</span>⠀<span class="ansi-magenta-fg">⢠</span><span class="ansi-magenta-fg">⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-red-fg">⡀</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-magenta-fg">⠆</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢆</span><span class="ansi-red-fg">⡀</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢆</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⠶</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⡈</span><span class="ansi-red-fg">⠻</span><span class="ansi-red-fg">⣦</span><span class="ansi-magenta-fg">⡈</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⣀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠶</span><span class="ansi-magenta-fg">⣦</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠱</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠱</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-magenta-fg">⠰</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⣤</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⡀</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-red-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠃</span>⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-magenta-fg">⣄</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-red-fg">⣤</span><span class="ansi-red-fg">⡀</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣀</span>⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠃</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢀</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-magenta-fg">⠤</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-red-fg">⠻</span><span class="ansi-red-fg">⢆</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⠷</span><span class="ansi-magenta-fg">⠦</span><span class="ansi-blue-fg">⢄</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-magenta-fg">⣀</span><span class="ansi-red-fg">⡀</span>⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-red-fg">⡀</span>⠀<span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⡀</span>⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⣷</span>⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⣀</span>⠀⠀<span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣤</span>⠀<span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⡇</span>⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠿</span><span class="ansi-magenta-fg">⣧</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-magenta-fg">⠸</span><span class="ansi-magenta-fg">⣧</span>⠀<span class="ansi-magenta-fg">⠈</span><span class="ansi-magenta-fg">⠹</span><span class="ansi-magenta-fg">⢿</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠉</span>⠀⠀<span class="ansi-blue-fg">⠱</span><span class="ansi-magenta-fg">⢶</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-red-fg">⠱</span><span class="ansi-red-fg">⣦</span><span class="ansi-magenta-fg">⡉</span><span class="ansi-magenta-fg">⠶</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-magenta-fg">⣀</span><span class="ansi-magenta-fg">⣈</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⢠</span><span class="ansi-magenta-fg">⣤</span>⠀<span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⢣</span><span class="ansi-magenta-fg">⡌</span><span class="ansi-red-fg">⠛</span><span class="ansi-magenta-fg">⣤</span><span class="ansi-magenta-fg">⡄</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⠛</span><span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-red-fg">⠈</span><span class="ansi-magenta-fg">⠙</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣆</span><span class="ansi-red-fg">⡀</span><span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-blue-fg">⡀</span><span class="ansi-magenta-fg">⠉</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-magenta-fg">⣀</span>⠀<span class="ansi-black-intense-fg">│</span>    
+   <span class="ansi-black-intense-fg">96</span> <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-magenta-fg">⠛</span><span class="ansi-magenta-fg">⣷</span><span class="ansi-magenta-fg">⡆</span><span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⣷</span>⠀⠀<span class="ansi-magenta-fg">⠘</span><span class="ansi-magenta-fg">⢻</span><span class="ansi-magenta-fg">⣶</span><span class="ansi-black-intense-fg">│</span>    
+      <span class="ansi-black-intense-fg">└──────────────────────────────────────────┘</span>    
+      ⠀<span class="ansi-black-intense-fg">1</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">96</span>⠀    
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀1256 nonzeros⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    </pre>
 </div>
 
 </div>
@@ -13985,32 +14016,32 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre><span class="ansi-bold">                      Sparsity Pattern</span>
-<span class="ansi-black-intense-fg">         ┌──────────────────────────────────────────┐</span>    
-       <span class="ansi-black-intense-fg">1</span><span class="ansi-black-intense-fg"> │</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
-        <span class="ansi-black-intense-fg"> │</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
-        <span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-black-intense-fg">│</span>    
-   <span class="ansi-black-intense-fg">10000</span><span class="ansi-black-intense-fg"> │</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-black-intense-fg">│</span>    
-<span class="ansi-black-intense-fg">         └──────────────────────────────────────────┘</span>    
-<span class="ansi-black-intense-fg">         1</span><span class="ansi-black-intense-fg">                    </span><span class="ansi-black-intense-fg">                  10000</span>
-                         nz = 49600</pre>
+<pre>         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-bold">Sparsity Pattern</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    
+         <span class="ansi-black-intense-fg">┌──────────────────────────────────────────┐</span>    
+       <span class="ansi-black-intense-fg">1</span> <span class="ansi-black-intense-fg">│</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-red-fg">&gt; 0</span>
+         <span class="ansi-black-intense-fg">│</span>⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span> <span class="ansi-blue-fg">&lt; 0</span>
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀⠀⠀<span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-blue-fg">⡀</span>⠀<span class="ansi-black-intense-fg">│</span>    
+   <span class="ansi-black-intense-fg">10000</span> <span class="ansi-black-intense-fg">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-blue-fg">⠈</span><span class="ansi-magenta-fg">⠻</span><span class="ansi-magenta-fg">⣦</span><span class="ansi-black-intense-fg">│</span>    
+         <span class="ansi-black-intense-fg">└──────────────────────────────────────────┘</span>    
+         ⠀<span class="ansi-black-intense-fg">1</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="ansi-black-intense-fg">10000</span>⠀    
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀49600 nonzeros⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    </pre>
 </div>
 
 </div>
@@ -14087,17 +14118,16 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  78.20 KiB
-  allocs estimate:  2
-  --------------
-  minimum time:     32.424 ms (0.00% GC)
-  median time:      34.470 ms (0.00% GC)
-  mean time:        34.509 ms (0.00% GC)
-  maximum time:     40.620 ms (0.00% GC)
-  --------------
-  samples:          145
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 97 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">39.363 ms</span> … <span class="ansi-magenta-fg">71.302 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">50.761 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">51.576 ms</span> ± <span class="ansi-green-fg"> 5.483 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+                     ▄ ▆<span class="ansi-blue-fg">█</span><span class="ansi-green-fg">▁</span>▁                                    
+  ▃▁▁▁▁▁▃▃▁▆▁▄▃▄▄▄▄▁▅███<span class="ansi-blue-fg">█</span><span class="ansi-green-fg">█</span>█▁▄▃▄▄▁▁▁▁▁▃▃▄▃▃▁▁▁▃▁▃▁▁▁▁▃▁▁▄▁▁▁▁▃ ▁
+  39.4 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>          70 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">78.17 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">2</span>.</pre>
 </div>
 
 </div>
@@ -14131,17 +14161,16 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  78.20 KiB
-  allocs estimate:  2
-  --------------
-  minimum time:     80.628 μs (0.00% GC)
-  median time:      96.454 μs (0.00% GC)
-  mean time:        104.144 μs (4.14% GC)
-  maximum time:     43.254 ms (99.62% GC)
-  --------------
-  samples:          10000
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 10000 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">72.055 μs</span> … <span class="ansi-magenta-fg"> 64.858 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 99.74%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">89.088 μs               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">98.353 μs</span> ± <span class="ansi-green-fg">647.760 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>6.58% ±  1.00%
+
+           ▄█▇▆▅▅<span class="ansi-blue-fg">▅</span>▃▁     <span class="ansi-green-fg"> </span>                                      
+  ▂▂▂▂▂▂▁▂▅██████<span class="ansi-blue-fg">█</span>███▇▇▆▅<span class="ansi-green-fg">▅</span>▄▄▄▃▃▃▃▃▂▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂ ▃
+  72.1 μs<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>          141 μs <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">78.17 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">2</span>.</pre>
 </div>
 
 </div>
@@ -14196,17 +14225,16 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  763.02 MiB
-  allocs estimate:  6
-  --------------
-  minimum time:     3.305 s (0.02% GC)
-  median time:      3.416 s (0.80% GC)
-  mean time:        3.416 s (0.80% GC)
-  maximum time:     3.527 s (1.54% GC)
-  --------------
-  samples:          2
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 2 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">3.180 s</span> … <span class="ansi-magenta-fg">   3.800 s</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.01% … 1.14%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">3.490 s               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.63%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">3.490 s</span> ± <span class="ansi-green-fg">438.342 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.63% ± 0.80%
+
+  <span class="ansi-blue-fg">█</span>                            <span class="ansi-green-fg"> </span>                           █  
+  <span class="ansi-blue-fg">█</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁<span class="ansi-green-fg">▁</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁
+  3.18 s<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>          3.8 s <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">763.02 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">6</span>.</pre>
 </div>
 
 </div>
@@ -14246,7 +14274,7 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>norm(xjacobi - xchol) = 553.3696146722076
+<pre>norm(xjacobi - xchol) = 498.7144076230417
 </pre>
 </div>
 </div>
@@ -14259,7 +14287,7 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>553.3696146722076</pre>
+<pre>498.7144076230417</pre>
 </div>
 
 </div>
@@ -14299,7 +14327,7 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>norm(xjacobi - xchol) = 0.0001726309300532125
+<pre>norm(xjacobi - xchol) = 1.626836219074868e-5
 </pre>
 </div>
 </div>
@@ -14312,7 +14340,7 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0001726309300532125</pre>
+<pre>1.626836219074868e-5</pre>
 </div>
 
 </div>
@@ -14345,17 +14373,16 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  2.06 MiB
-  allocs estimate:  30008
-  --------------
-  minimum time:     2.340 s (0.00% GC)
-  median time:      2.664 s (0.00% GC)
-  mean time:        2.664 s (0.00% GC)
-  maximum time:     2.988 s (0.00% GC)
-  --------------
-  samples:          2
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 3 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">2.221 s</span> … <span class="ansi-magenta-fg">  2.294 s</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">2.232 s              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">2.249 s</span> ± <span class="ansi-green-fg">39.599 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+  <span class="ansi-blue-fg">█</span>       █             <span class="ansi-green-fg"> </span>                                 █  
+  <span class="ansi-blue-fg">█</span>▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁<span class="ansi-green-fg">▁</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁
+  2.22 s<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>        2.29 s <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">2.06 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">30008</span>.</pre>
 </div>
 
 </div>
@@ -14395,7 +14422,7 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>norm(xgs - xchol) = 0.00016756826216903108
+<pre>norm(xgs - xchol) = 1.429290496951622e-5
 </pre>
 </div>
 </div>
@@ -14408,7 +14435,7 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.00016756826216903108</pre>
+<pre>1.429290496951622e-5</pre>
 </div>
 
 </div>
@@ -14441,17 +14468,16 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  156.64 KiB
-  allocs estimate:  7
-  --------------
-  minimum time:     1.805 s (0.00% GC)
-  median time:      1.809 s (0.00% GC)
-  mean time:        1.816 s (0.00% GC)
-  maximum time:     1.835 s (0.00% GC)
-  --------------
-  samples:          3
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 3 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">1.888 s</span> … <span class="ansi-magenta-fg"> 1.903 s</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">1.892 s             </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">1.895 s</span> ± <span class="ansi-green-fg">7.816 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+  <span class="ansi-blue-fg">█</span>             █        <span class="ansi-green-fg"> </span>                               █  
+  <span class="ansi-blue-fg">█</span>▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁<span class="ansi-green-fg">▁</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁
+  1.89 s<span class="ansi-black-intense-fg">        Histogram: frequency by time</span>         1.9 s <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">156.58 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">7</span>.</pre>
 </div>
 
 </div>
@@ -14491,7 +14517,7 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>norm(xsor - xchol) = 0.003162012427719623
+<pre>norm(xsor - xchol) = 0.0002980091296489782
 </pre>
 </div>
 </div>
@@ -14504,7 +14530,7 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.003162012427719623</pre>
+<pre>0.0002980091296489782</pre>
 </div>
 
 </div>
@@ -14537,17 +14563,16 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  547.36 KiB
-  allocs estimate:  20009
-  --------------
-  minimum time:     1.435 s (0.00% GC)
-  median time:      1.455 s (0.00% GC)
-  mean time:        1.500 s (0.00% GC)
-  maximum time:     1.656 s (0.00% GC)
-  --------------
-  samples:          4
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 4 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">1.426 s</span> … <span class="ansi-magenta-fg"> 1.443 s</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">1.435 s             </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">1.435 s</span> ± <span class="ansi-green-fg">8.591 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+  █      █<span class="ansi-blue-fg"> </span>                   <span class="ansi-green-fg"> </span>                  █       █  
+  █▁▁▁▁▁▁█<span class="ansi-blue-fg">▁</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁<span class="ansi-green-fg">▁</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁█ ▁
+  1.43 s<span class="ansi-black-intense-fg">        Histogram: frequency by time</span>        1.44 s <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">547.27 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">20009</span>.</pre>
 </div>
 
 </div>
@@ -14587,7 +14612,7 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>norm(xcg - xchol) = 1.4922213222422449e-5
+<pre>norm(xcg - xchol) = 1.2232567404794239e-5
 </pre>
 </div>
 </div>
@@ -14600,7 +14625,7 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.4922213222422449e-5</pre>
+<pre>1.2232567404794239e-5</pre>
 </div>
 
 </div>
@@ -14633,17 +14658,16 @@ typeof(Afull) = Matrix{Float64}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  313.61 KiB
-  allocs estimate:  16
-  --------------
-  minimum time:     23.112 ms (0.00% GC)
-  median time:      24.519 ms (0.00% GC)
-  mean time:        24.837 ms (0.00% GC)
-  maximum time:     30.758 ms (0.00% GC)
-  --------------
-  samples:          202
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 232 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">19.793 ms</span> … <span class="ansi-magenta-fg">36.812 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">21.297 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">21.622 ms</span> ± <span class="ansi-green-fg"> 1.633 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>0.00% ± 0.00%
+
+     ▄▅█▇▄▇▃ ▂▄▄<span class="ansi-blue-fg"> </span>▁▄<span class="ansi-green-fg">▃</span>▁▂ ▂▁                                      
+  ▃▁▄███████▇███<span class="ansi-blue-fg">▇</span>██<span class="ansi-green-fg">█</span>██▅███▅▅▆▅▃▆▅▃▄▅▅▄▃▅▄▃▁▁▁▄▁▁▄▁▁▁▁▁▁▁▁▁▁▁▃ ▄
+  19.8 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>        26.1 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">313.39 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">16</span>.</pre>
 </div>
 
 </div>

@@ -13144,14 +13144,14 @@ for linear regression, the coefficient matrix $\mathbf{X}^T \mathbf{X}$ is symme
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Julia Version 1.6.0
-Commit f9720dc2eb (2021-03-24 12:55 UTC)
+<pre>Julia Version 1.7.1
+Commit ac5cc99908 (2021-12-22 19:35 UTC)
 Platform Info:
-  OS: macOS (x86_64-apple-darwin19.6.0)
+  OS: macOS (x86_64-apple-darwin19.5.0)
   CPU: Intel(R) Core(TM) i7-6920HQ CPU @ 2.90GHz
   WORD_SIZE: 64
   LIBM: libopenlibm
-  LLVM: libLLVM-11.0.1 (ORCJIT, skylake)
+  LLVM: libLLVM-12.0.1 (ORCJIT, skylake)
 Environment:
   JULIA_EDITOR = code
   JULIA_NUM_THREADS = 4
@@ -13715,11 +13715,11 @@ U factor:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>5×5 Matrix{Float64}:
-  1.97375    2.0722    1.71191    0.253774   -0.544089
-  2.0722     5.86947   3.01646    0.93344    -1.50292
-  1.71191    3.01646   2.10156    0.21341    -0.965213
-  0.253774   0.93344   0.21341    0.393107   -0.0415803
- -0.544089  -1.50292  -0.965213  -0.0415803   0.546021</pre>
+  0.726688  -0.982622  -1.0597   -0.58302    0.41867
+ -0.982622   1.45895    1.96103   0.931141  -0.594176
+ -1.0597     1.96103    4.07717   1.96485   -1.09925
+ -0.58302    0.931141   1.96485   1.35893   -0.880852
+  0.41867   -0.594176  -1.09925  -0.880852   0.607154</pre>
 </div>
 
 </div>
@@ -13755,21 +13755,21 @@ RankDeficientException(1)
 
 Stacktrace:
  [1] chkfullrank
-   @ /Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/cholesky.jl:639 [inlined]
- [2] #cholesky!#127
-   @ /Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/cholesky.jl:295 [inlined]
+   @ /Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/cholesky.jl:693 [inlined]
+ [2] #cholesky!#140
+   @ /Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/cholesky.jl:308 [inlined]
  [3] cholesky!(A::Matrix{Float64}, ::Val{true}; tol::Float64, check::Bool)
-   @ LinearAlgebra /Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/cholesky.jl:321
- [4] #cholesky#131
-   @ /Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/cholesky.jl:402 [inlined]
+   @ LinearAlgebra /Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/cholesky.jl:334
+ [4] #cholesky#144
+   @ /Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/cholesky.jl:454 [inlined]
  [5] cholesky(A::Matrix{Float64}, ::Val{true})
-   @ LinearAlgebra /Users/julia/buildbot/worker/package_macos64/build/usr/share/julia/stdlib/v1.6/LinearAlgebra/src/cholesky.jl:402
+   @ LinearAlgebra /Applications/Julia-1.7.app/Contents/Resources/julia/share/julia/stdlib/v1.7/LinearAlgebra/src/cholesky.jl:454
  [6] top-level scope
    @ In[15]:1
  [7] eval
-   @ ./boot.jl:360 [inlined]
+   @ ./boot.jl:373 [inlined]
  [8] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
-   @ Base ./loading.jl:1094</pre>
+   @ Base ./loading.jl:1196</pre>
 </div>
 </div>
 
@@ -13804,18 +13804,18 @@ Stacktrace:
 <pre>CholeskyPivoted{Float64, Matrix{Float64}}
 U factor with rank 4:
 5×5 UpperTriangular{Float64, Matrix{Float64}}:
- 2.4227  0.855329   0.38529    -0.620349     1.24508
-  ⋅      1.11452   -0.0679895  -0.0121011    0.580476
-  ⋅       ⋅         0.489935    0.4013      -0.463002
-  ⋅       ⋅          ⋅          1.49012e-8   0.0
-  ⋅       ⋅          ⋅           ⋅           0.0
+ 2.0192  0.971191   0.973082   -0.544399    -0.524812
+  ⋅      0.718149  -0.0193672  -0.0911515   -0.658539
+  ⋅       ⋅         0.641612   -0.549978    -0.132617
+  ⋅       ⋅          ⋅          1.05367e-8   1.05367e-8
+  ⋅       ⋅          ⋅           ⋅          -4.44089e-16
 permutation:
 5-element Vector{Int64}:
+ 3
  2
- 1
  4
  5
- 3</pre>
+ 1</pre>
 </div>
 
 </div>
@@ -13915,11 +13915,11 @@ permutation:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>5×5 LowerTriangular{Float64, Matrix{Float64}}:
-  2.4227      ⋅           ⋅         ⋅           ⋅ 
-  0.855329   1.11452      ⋅         ⋅           ⋅ 
-  0.38529   -0.0679895   0.489935   ⋅           ⋅ 
- -0.620349  -0.0121011   0.4013    1.49012e-8   ⋅ 
-  1.24508    0.580476   -0.463002  0.0         0.0</pre>
+  2.0192      ⋅           ⋅         ⋅            ⋅ 
+  0.971191   0.718149     ⋅         ⋅            ⋅ 
+  0.973082  -0.0193672   0.641612   ⋅            ⋅ 
+ -0.544399  -0.0911515  -0.549978  1.05367e-8    ⋅ 
+ -0.524812  -0.658539   -0.132617  1.05367e-8  -4.44089e-16</pre>
 </div>
 
 </div>
@@ -13953,11 +13953,11 @@ permutation:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>5×5 UpperTriangular{Float64, Matrix{Float64}}:
- 2.4227  0.855329   0.38529    -0.620349     1.24508
-  ⋅      1.11452   -0.0679895  -0.0121011    0.580476
-  ⋅       ⋅         0.489935    0.4013      -0.463002
-  ⋅       ⋅          ⋅          1.49012e-8   0.0
-  ⋅       ⋅          ⋅           ⋅           0.0</pre>
+ 2.0192  0.971191   0.973082   -0.544399    -0.524812
+  ⋅      0.718149  -0.0193672  -0.0911515   -0.658539
+  ⋅       ⋅         0.641612   -0.549978    -0.132617
+  ⋅       ⋅          ⋅          1.05367e-8   1.05367e-8
+  ⋅       ⋅          ⋅           ⋅          -4.44089e-16</pre>
 </div>
 
 </div>
@@ -13991,11 +13991,11 @@ permutation:
 
 <div class="output_text output_subarea output_execute_result">
 <pre>5-element Vector{Int64}:
+ 3
  2
- 1
  4
  5
- 3</pre>
+ 1</pre>
 </div>
 
 </div>
@@ -14152,9 +14152,9 @@ $$</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>logpdf_mvn_1(y, Σ) = -4878.375103770505
-logpdf_mvn_2(y, Σ) = -4878.375103770553
-logpdf_mvn_3(y, Σc) = -4878.375103770553
+<pre>logpdf_mvn_1(y, Σ) = -4906.163191358374
+logpdf_mvn_2(y, Σ) = -4906.163191358468
+logpdf_mvn_3(y, Σc) = -4906.163191358468
 </pre>
 </div>
 </div>
@@ -14187,17 +14187,16 @@ logpdf_mvn_3(y, Σc) = -4878.375103770553
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  15.78 MiB
-  allocs estimate:  10
-  --------------
-  minimum time:     33.638 ms (0.00% GC)
-  median time:      36.739 ms (0.00% GC)
-  mean time:        38.293 ms (2.76% GC)
-  maximum time:     56.384 ms (5.95% GC)
-  --------------
-  samples:          131
-  evals/sample:     1</pre>
+<pre>BenchmarkTools.Trial: 123 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">32.491 ms</span> … <span class="ansi-magenta-fg">60.625 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>0.00% … 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">38.295 ms              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">40.877 ms</span> ± <span class="ansi-green-fg"> 6.546 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>2.65% ± 3.76%
+
+       ▁▂▂█ ▇▂   <span class="ansi-blue-fg"> </span>      <span class="ansi-green-fg"> </span>                                      
+  ▃▅▆▁▅████▅███▆█<span class="ansi-blue-fg">▅</span>█▃▁██▃<span class="ansi-green-fg">▅</span>▃▅▃▃▅▅▁▃▁▃▅▅▃▁▃▁▁▅▃▁▃▅▆▃▁▃▅▅▃▅▁▃▅▃▃▃ ▃
+  32.5 ms<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>        55.4 ms <span class="ansi-bold">&lt;</span>
+
+ Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">15.77 MiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">9</span>.</pre>
 </div>
 
 </div>
@@ -14208,7 +14207,7 @@ logpdf_mvn_3(y, Σc) = -4878.375103770553
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@benchmark</span> <span class="n">logpdf_mvn_2</span><span class="p">(</span><span class="o">$</span><span class="n">y</span><span class="p">,</span> <span class="o">$</span><span class="n">Σ</span><span class="p">)</span>
@@ -14218,76 +14217,16 @@ logpdf_mvn_3(y, Σc) = -4878.375103770553
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[26]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  15.27 MiB
-  allocs estimate:  8
-  --------------
-  minimum time:     8.095 ms (0.00% GC)
-  median time:      10.639 ms (0.00% GC)
-  mean time:        11.505 ms (10.06% GC)
-  maximum time:     27.415 ms (26.83% GC)
-  --------------
-  samples:          435
-  evals/sample:     1</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@benchmark</span> <span class="n">logpdf_mvn_3</span><span class="p">(</span><span class="o">$</span><span class="n">y</span><span class="p">,</span> <span class="o">$</span><span class="n">Σc</span><span class="p">)</span> <span class="n">setup</span><span class="o">=</span><span class="p">(</span><span class="n">copy!</span><span class="p">(</span><span class="n">Σc</span><span class="p">,</span> <span class="n">Σ</span><span class="p">))</span> <span class="n">evals</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[27]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>BenchmarkTools.Trial: 
-  memory estimate:  7.98 KiB
-  allocs estimate:  3
-  --------------
-  minimum time:     5.614 ms (0.00% GC)
-  median time:      5.782 ms (0.00% GC)
-  mean time:        6.011 ms (0.00% GC)
-  maximum time:     8.993 ms (0.00% GC)
-  --------------
-  samples:          734
-  evals/sample:     1</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
