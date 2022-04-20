@@ -30,6 +30,7 @@ Manifest.toml
 .ipynb_checkpoints
 scripts/
 hw*sol*.*
+hw*sol/
 flights/
 grammatrix
 snap_web_google
