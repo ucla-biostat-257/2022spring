@@ -13099,7 +13099,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Biostat-257-Homework-3">Biostat 257 Homework 3<a class="anchor-link" href="#Biostat-257-Homework-3">&#182;</a></h1><p><strong>Due May 13 @ 11:59PM</strong></p>
+<h1 id="Biostat-257-Homework-3">Biostat 257 Homework 3<a class="anchor-link" href="#Biostat-257-Homework-3">&#182;</a></h1><p><strong>Due May 6 @ 11:59PM</strong></p>
 
 </div>
 </div>
@@ -13383,7 +13383,7 @@ where</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The points you will get is
 $$
-\frac{x}{10000} \times 30,
+\frac{x}{1000} \times 30,
 $$
 where $x$ is the speedup of your program against the standard method.</p>
 
@@ -13396,7 +13396,7 @@ where $x$ is the speedup of your program against the standard method.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># this is the points you&#39;ll get</span>
-<span class="n">clamp</span><span class="p">(</span><span class="n">median</span><span class="p">(</span><span class="n">bm1</span><span class="p">)</span><span class="o">.</span><span class="n">time</span> <span class="o">/</span> <span class="n">median</span><span class="p">(</span><span class="n">bm2</span><span class="p">)</span><span class="o">.</span><span class="n">time</span> <span class="o">/</span> <span class="mi">10_000</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">clamp</span><span class="p">(</span><span class="n">median</span><span class="p">(</span><span class="n">bm1</span><span class="p">)</span><span class="o">.</span><span class="n">time</span> <span class="o">/</span> <span class="n">median</span><span class="p">(</span><span class="n">bm2</span><span class="p">)</span><span class="o">.</span><span class="n">time</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13407,7 +13407,7 @@ where $x$ is the speedup of your program against the standard method.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Hint</strong>: Apparently I am using 10000 as denominator because I expect your code to be at least $10000 \times$ faster than the standard method.</p>
+<p><strong>Hint</strong>: Apparently I am using 1000 as denominator because I expect your code to be at least $1000 \times$ faster than the standard method.</p>
 
 </div>
 </div>
