@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>hw03</title>
+<title>hw04</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13120,7 +13120,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="PageRank">PageRank<a class="anchor-link" href="#PageRank">&#182;</a></h2><p>We are going to try different numerical methods learnt in class on the <a href="https://en.wikipedia.org/wiki/PageRank">Google PageRank problem</a>.</p>
+<p>We are going to try different numerical methods learnt in class on the <a href="https://en.wikipedia.org/wiki/PageRank">Google PageRank problem</a>.</p>
 
 </div>
 </div>
@@ -13128,7 +13128,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Q2.1-(5-pts)-Recognize-structure">Q2.1 (5 pts) Recognize structure<a class="anchor-link" href="#Q2.1-(5-pts)-Recognize-structure">&#182;</a></h3><p>Let $\mathbf{A} \in \{0,1\}^{n \times n}$ be the connectivity matrix of $n$ web pages with entries
+<h2 id="Q1-(5-pts)-Recognize-structure">Q1 (5 pts) Recognize structure<a class="anchor-link" href="#Q1-(5-pts)-Recognize-structure">&#182;</a></h2><p>Let $\mathbf{A} \in \{0,1\}^{n \times n}$ be the connectivity matrix of $n$ web pages with entries
 $$
 \begin{eqnarray*}
     a_{ij}= \begin{cases}
@@ -13154,7 +13154,7 @@ $r_i = \sum_j a_{ij}$ is the out-degree of page $i$. That is $r_i$ is the number
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Q2.2-Relate-to-numerical-linear-algebra">Q2.2 Relate to numerical linear algebra<a class="anchor-link" href="#Q2.2-Relate-to-numerical-linear-algebra">&#182;</a></h3><p>According to standard Markov chain theory, the (random) position of the surfer converges to the stationary distribution $\mathbf{x} = (x_1,\ldots,x_n)^T$ of the Markov chain. $x_i$ has the natural interpretation of the proportion of times the surfer visits page $i$ in the long run. Therefore $\mathbf{x}$ serves as page ranks: a higher $x_i$ means page $i$ is more visited. It is well-known that $\mathbf{x}$ is the left eigenvector corresponding to the top eigenvalue 1 of the transition matrix $\mathbf{P}$. That is $\mathbf{P}^T \mathbf{x} = \mathbf{x}$. Therefore $\mathbf{x}$ can be solved as an <strong>eigen-problem</strong>. It can also be cast as <strong>solving a linear system</strong>. Since the row sums of $\mathbf{P}$ are 1, $\mathbf{P}$ is rank deficient. We can replace the first equation by the $\sum_{i=1}^n x_i = 1$.</p>
+<h2 id="Q2-Relate-to-numerical-linear-algebra">Q2 Relate to numerical linear algebra<a class="anchor-link" href="#Q2-Relate-to-numerical-linear-algebra">&#182;</a></h2><p>According to standard Markov chain theory, the (random) position of the surfer converges to the stationary distribution $\mathbf{x} = (x_1,\ldots,x_n)^T$ of the Markov chain. $x_i$ has the natural interpretation of the proportion of times the surfer visits page $i$ in the long run. Therefore $\mathbf{x}$ serves as page ranks: a higher $x_i$ means page $i$ is more visited. It is well-known that $\mathbf{x}$ is the left eigenvector corresponding to the top eigenvalue 1 of the transition matrix $\mathbf{P}$. That is $\mathbf{P}^T \mathbf{x} = \mathbf{x}$. Therefore $\mathbf{x}$ can be solved as an <strong>eigen-problem</strong>. It can also be cast as <strong>solving a linear system</strong>. Since the row sums of $\mathbf{P}$ are 1, $\mathbf{P}$ is rank deficient. We can replace the first equation by the $\sum_{i=1}^n x_i = 1$.</p>
 <p>Hint: For iterative solvers, we don't need to replace the 1st equation. We can use the matrix $\mathbf{I} - \mathbf{P}^T$ directly if we start with a vector with all positive entries.</p>
 
 </div>
@@ -13163,7 +13163,7 @@ $r_i = \sum_j a_{ij}$ is the out-degree of page $i$. That is $r_i$ is the number
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Q2.3-(10-pts)-Explore-data">Q2.3 (10 pts) Explore data<a class="anchor-link" href="#Q2.3-(10-pts)-Explore-data">&#182;</a></h3><p>Obtain the connectivity matrix <code>A</code> from the <code>SNAP/web-Google</code> data in the MatrixDepot package.</p>
+<h2 id="Q3-(10-pts)-Explore-data">Q3 (10 pts) Explore data<a class="anchor-link" href="#Q3-(10-pts)-Explore-data">&#182;</a></h2><p>Obtain the connectivity matrix <code>A</code> from the <code>SNAP/web-Google</code> data in the MatrixDepot package.</p>
 
 </div>
 </div>
@@ -13222,7 +13222,7 @@ $r_i = \sum_j a_{ij}$ is the out-degree of page $i$. That is $r_i$ is the number
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Q2.4-(5-pts)-Dense-linear-algebra?">Q2.4 (5 pts) Dense linear algebra?<a class="anchor-link" href="#Q2.4-(5-pts)-Dense-linear-algebra?">&#182;</a></h3><p>Consider the following methods to obtain the page ranks of the <code>SNAP/web-Google</code> data.</p>
+<h2 id="Q4-(5-pts)-Dense-linear-algebra?">Q4 (5 pts) Dense linear algebra?<a class="anchor-link" href="#Q4-(5-pts)-Dense-linear-algebra?">&#182;</a></h2><p>Consider the following methods to obtain the page ranks of the <code>SNAP/web-Google</code> data.</p>
 <ol>
 <li>A dense linear system solver such as LU decomposition.  </li>
 <li>A dense eigen-solver for asymmetric matrix.  </li>
@@ -13235,7 +13235,7 @@ $r_i = \sum_j a_{ij}$ is the out-degree of page $i$. That is $r_i$ is the number
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Q2.5-Iterative-solvers">Q2.5 Iterative solvers<a class="anchor-link" href="#Q2.5-Iterative-solvers">&#182;</a></h3><p>Set the <em>teleportation</em> parameter at $p = 0.85$. Consider the following methods for solving the PageRank problem.</p>
+<h2 id="Q5-(75-pts)-Iterative-solvers">Q5 (75 pts) Iterative solvers<a class="anchor-link" href="#Q5-(75-pts)-Iterative-solvers">&#182;</a></h2><p>Set the <em>teleportation</em> parameter at $p = 0.85$. Consider the following methods for solving the PageRank problem.</p>
 <ol>
 <li>An iterative linear system solver such as GMRES. </li>
 <li>An iterative eigen-solver such as Arnoldi method.</li>
@@ -13623,7 +13623,7 @@ for stationary distribution $\mathbf{x}$.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Q2.6-(5-pts)-Results">Q2.6 (5 pts) Results<a class="anchor-link" href="#Q2.6-(5-pts)-Results">&#182;</a></h3><p>List the top 20 pages you found and their corresponding PageRank score. Do they match the top 20 pages ranked according to in-degrees?</p>
+<h2 id="Q6-(5-pts)-Results">Q6 (5 pts) Results<a class="anchor-link" href="#Q6-(5-pts)-Results">&#182;</a></h2><p>List the top 20 pages you found and their corresponding PageRank score. Do they match the top 20 pages ranked according to in-degrees?</p>
 
 </div>
 </div>
@@ -13631,7 +13631,7 @@ for stationary distribution $\mathbf{x}$.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Q2.7-Be-proud-of-yourself">Q2.7 Be proud of yourself<a class="anchor-link" href="#Q2.7-Be-proud-of-yourself">&#182;</a></h3><p>Go to your resume/cv and claim you have experience performing analysis on a network of one million nodes.</p>
+<h2 id="Q7-Be-proud-of-yourself">Q7 Be proud of yourself<a class="anchor-link" href="#Q7-Be-proud-of-yourself">&#182;</a></h2><p>Go to your resume/cv and claim you have experience performing analysis on a network of one million nodes.</p>
 
 </div>
 </div>
