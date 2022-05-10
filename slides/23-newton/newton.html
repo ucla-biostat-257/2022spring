@@ -13096,10 +13096,58 @@ $( document ).ready(function(){
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">versioninfo</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Julia Version 1.7.1
+Commit ac5cc99908 (2021-12-22 19:35 UTC)
+Platform Info:
+  OS: macOS (x86_64-apple-darwin19.5.0)
+  CPU: Intel(R) Core(TM) i7-6920HQ CPU @ 2.90GHz
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-12.0.1 (ORCJIT, skylake)
+Environment:
+  JULIA_EDITOR = code
+  JULIA_NUM_THREADS = 4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Newton's-Method-and-Fisher-Scoring-(KL-Chapter-14)">Newton's Method and Fisher Scoring (KL Chapter 14)<a class="anchor-link" href="#Newton's-Method-and-Fisher-Scoring-(KL-Chapter-14)">&#182;</a></h1><p>Consider maximizing log-likelihood function $L(\mathbf{\theta})$, $\theta \in \Theta \subset \mathbb{R}^p$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Notations">Notations<a class="anchor-link" href="#Notations">&#182;</a></h2><ul>
 <li><p><strong>Gradient</strong> (or <strong>score</strong>) of $L$:
   $$
@@ -13176,14 +13224,14 @@ We call this <strong>naive Newton's method</strong>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Plots</span><span class="p">;</span> <span class="n">gr</span><span class="p">()</span>
 <span class="k">using</span> <span class="n">LaTeXStrings</span><span class="p">,</span> <span class="n">ForwardDiff</span>
 
 <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">ForwardDiff</span><span class="o">.</span><span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c"># gradient</span>
+<span class="n">df</span>  <span class="o">=</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">ForwardDiff</span><span class="o">.</span><span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c"># gradient</span>
 <span class="n">d2f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">ForwardDiff</span><span class="o">.</span><span class="n">derivative</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c"># hessian</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c"># start point: 2.0 (local maximum), 2.75 (diverge), 4.0 (local minimum)</span>
 <span class="n">titletext</span> <span class="o">=</span> <span class="s">&quot;Starting point: </span><span class="si">$x</span><span class="s">&quot;</span>
@@ -13211,8 +13259,8 @@ We call this <strong>naive Newton's method</strong>.</p>
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>┌ Info: Saved animation to 
-│   fn = /Users/huazhou/Documents/github.com/ucla-biostat-257-2021spring.github.io/slides/23-newton/tmp.gif
-└ @ Plots /Users/huazhou/.julia/packages/Plots/YicDu/src/animation.jl:104
+│   fn = /Users/huazhou/Documents/github.com/ucla-biostat-257/2022spring/slides/23-newton/tmp.gif
+└ @ Plots /Users/huazhou/.julia/packages/Plots/tXtrW/src/animation.jl:114
 </pre>
 </div>
 </div>
