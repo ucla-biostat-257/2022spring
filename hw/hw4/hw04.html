@@ -13360,7 +13360,8 @@ for stationary distribution $\mathbf{x}$.</p>
 <div class=" highlight hl-julia"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">PageRankImPt</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="nd">@assert</span> <span class="n">transpose</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="n">≈</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="c">#@assert transpose(M) * ones(n) ≈ zeros(n)</span>
+<span class="nd">@assert</span> <span class="n">norm</span><span class="p">(</span><span class="n">transpose</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-12</span>
 </pre></div>
 
     </div>
@@ -13373,7 +13374,8 @@ for stationary distribution $\mathbf{x}$.</p>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="nd">@assert</span> <span class="n">M</span> <span class="o">*</span> <span class="n">xsol</span> <span class="n">≈</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="c">#@assert M * xsol ≈ zeros(n)</span>
+<span class="nd">@assert</span> <span class="n">norm</span><span class="p">(</span><span class="n">M</span> <span class="o">*</span> <span class="n">xsol</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-12</span>
 </pre></div>
 
     </div>
