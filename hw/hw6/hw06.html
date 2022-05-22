@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>hw05</title>
+<title>hw06</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13099,7 +13099,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Biostat-257-Homework-5">Biostat 257 Homework 5<a class="anchor-link" href="#Biostat-257-Homework-5">&#182;</a></h1><p><strong>Due June 8 @ 11:59PM</strong></p>
+<h1 id="Biostat-257-Homework-6">Biostat 257 Homework 6<a class="anchor-link" href="#Biostat-257-Homework-6">&#182;</a></h1><p><strong>Due June 10 @ 11:59PM</strong></p>
 
 </div>
 </div>
@@ -13145,7 +13145,7 @@ Given $m$ independent data points $(\mathbf{y}_i, \mathbf{X}_i, \mathbf{Z}_i)$, 
 $$
 \ell(\boldsymbol{\beta}, \boldsymbol{\Sigma}, \sigma_0^2) = \sum_{i=1}^m \ell_i(\boldsymbol{\beta}, \boldsymbol{\Sigma}, \sigma_0^2).
 $$</p>
-<p>In HW4, we used the nonlinear programming (NLP) approach (Newton type algorithms) for optimization. In this assignment, we derive and implement an expectation-maximization (EM) algorithm for the same problem.</p>
+<p>In HW5, we used the nonlinear programming (NLP) approach (Newton type algorithms) for optimization. In this assignment, we derive and implement an expectation-maximization (EM) algorithm for the same problem.</p>
 
 </div>
 </div>
@@ -13217,7 +13217,7 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q3.-(20-pts)-Objective-of-a-single-datum">Q3. (20 pts) Objective of a single datum<a class="anchor-link" href="#Q3.-(20-pts)-Objective-of-a-single-datum">&#182;</a></h2><p>We modify the code from HW4 to evaluate the objective, the conditional mean of $\boldsymbol{\gamma}$, and the conditional variance of $\boldsymbol{\gamma}$. Start-up code is provided below. You do <em>not</em> have to use this code.</p>
+<h2 id="Q3.-(20-pts)-Objective-of-a-single-datum">Q3. (20 pts) Objective of a single datum<a class="anchor-link" href="#Q3.-(20-pts)-Objective-of-a-single-datum">&#182;</a></h2><p>We modify the code from HW5 to evaluate the objective, the conditional mean of $\boldsymbol{\gamma}$, and the conditional variance of $\boldsymbol{\gamma}$. Start-up code is provided below. You do <em>not</em> have to use this code.</p>
 
 </div>
 </div>
@@ -13355,7 +13355,7 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is a good idea to test correctness and efficiency of the single datum objective/posterior mean/var evaluator here. It's the same test datum in HW2 and HW4.</p>
+<p>It is a good idea to test correctness and efficiency of the single datum objective/posterior mean/var evaluator here. It's the same test datum in HW3 and HW5.</p>
 
 </div>
 </div>
@@ -13423,12 +13423,14 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="nd">@assert</span> <span class="n">abs</span><span class="p">(</span><span class="n">logl</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mf">3261.9177559187597</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-8</span>
-<span class="nd">@assert</span> <span class="n">norm</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">μγ</span> <span class="o">-</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.2467648280832386</span><span class="p">,</span> 
-        <span class="o">-</span><span class="mf">0.02448852130995758</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7973392260495442</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1e-8</span>
-<span class="nd">@assert</span> <span class="n">norm</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">νγ</span> <span class="o">-</span> <span class="p">[</span><span class="mf">0.000749436595166797</span> <span class="mf">1.9689775630068264e-6</span> <span class="mf">1.6361330590481234e-6</span><span class="p">;</span> 
-        <span class="mf">1.96897748759551e-6</span> <span class="mf">0.0007323744616953198</span> <span class="o">-</span><span class="mf">1.0428608786771824e-5</span><span class="p">;</span> 
-        <span class="mf">1.6361330146430107e-6</span> <span class="o">-</span><span class="mf">1.0428608802351851e-5</span> <span class="mf">0.0007326509694599695</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1e-8</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@assert</span> <span class="n">abs</span><span class="p">(</span><span class="n">logl</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mf">3256.1793358058258</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-4</span>
+<span class="nd">@assert</span> <span class="n">norm</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">μγ</span> <span class="o">-</span> <span class="p">[</span><span class="mf">0.10608689301333621</span><span class="p">,</span> 
+        <span class="o">-</span><span class="mf">0.25104190602577225</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4653979409855415</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1e-4</span>
+<span class="nd">@assert</span> <span class="n">norm</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">νγ</span> <span class="o">-</span> <span class="p">[</span>
+        <span class="mf">0.0007494356395909563</span> <span class="o">-</span><span class="mf">1.2183420093769967e-6</span> <span class="o">-</span><span class="mf">2.176783643112221e-6</span><span class="p">;</span> 
+        <span class="o">-</span><span class="mf">1.2183420282298223e-6</span> <span class="mf">0.0007542331467601107</span> <span class="mf">2.1553464632686345e-5</span><span class="p">;</span> 
+        <span class="o">-</span><span class="mf">2.1767836636008638e-6</span> <span class="mf">2.1553464641863096e-5</span> <span class="mf">0.0007465271342535443</span>
+        <span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1e-4</span>
 </pre></div>
 
     </div>
@@ -13467,7 +13469,7 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>My median runt time is 1.7μs. You will get full credit if the median run time is within 10μs. The points you will get are</p>
+<p>My median runt time is 1.8μs. You will get full credit if the median run time is within 10μs. The points you will get are</p>
 
 </div>
 </div>
@@ -13724,8 +13726,8 @@ $$</p>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="nd">@assert</span> <span class="n">abs</span><span class="p">(</span><span class="n">obj1</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.8342752296337797e6</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-6</span>
-<span class="nd">@assert</span> <span class="n">abs</span><span class="p">(</span><span class="n">obj2</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.8342646397564034e6</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-6</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@assert</span> <span class="n">abs</span><span class="p">(</span><span class="n">obj1</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.840068438369969e6</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-4</span>
+<span class="nd">@assert</span> <span class="n">abs</span><span class="p">(</span><span class="n">obj2</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.84006046054206e6</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-4</span>
 </pre></div>
 
     </div>
@@ -13761,7 +13763,7 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>My median run time is 2.17ms. You will get full credit if your median run time is within 10ms. The points you will get are</p>
+<p>My median run time is 2.4ms. You will get full credit if your median run time is within 10ms. The points you will get are</p>
 
 </div>
 </div>
@@ -13975,7 +13977,7 @@ $$</p>
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># initialize from least squares</span>
 <span class="n">init_ls!</span><span class="p">(</span><span class="n">lmm</span><span class="p">)</span>
 
-<span class="nd">@time</span> <span class="n">fit!</span><span class="p">(</span><span class="n">lmm</span><span class="p">,</span> <span class="n">prtfreq</span> <span class="o">=</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nd">@time</span> <span class="n">fit!</span><span class="p">(</span><span class="n">lmm</span><span class="p">,</span> <span class="n">prtfreq</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span>
 
 <span class="n">println</span><span class="p">(</span><span class="s">&quot;objective value at solution: &quot;</span><span class="p">,</span> <span class="n">update_em!</span><span class="p">(</span><span class="n">lmm</span><span class="p">));</span> <span class="n">println</span><span class="p">()</span>
 <span class="n">println</span><span class="p">(</span><span class="s">&quot;solution values:&quot;</span><span class="p">)</span>
@@ -14014,7 +14016,7 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Efficiency">Efficiency<a class="anchor-link" href="#Efficiency">&#182;</a></h3><p>My median run time 1.8s. You get 10 points if your median run time is within 5s.</p>
+<h3 id="Efficiency">Efficiency<a class="anchor-link" href="#Efficiency">&#182;</a></h3><p>My median run time 12ms. You get 10 points if your median run time is within 1s.</p>
 
 </div>
 </div>
@@ -14038,7 +14040,7 @@ $$</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># this is the points you get</span>
-<span class="n">clamp</span><span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="p">(</span><span class="n">median</span><span class="p">(</span><span class="n">bm_em</span><span class="p">)</span><span class="o">.</span><span class="n">time</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">clamp</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">median</span><span class="p">(</span><span class="n">bm_em</span><span class="p">)</span><span class="o">.</span><span class="n">time</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14049,7 +14051,7 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q10.-(10-pts)-EM-vs-Newton-type-algorithms">Q10. (10 pts) EM vs Newton type algorithms<a class="anchor-link" href="#Q10.-(10-pts)-EM-vs-Newton-type-algorithms">&#182;</a></h2><p>Contrast EM algorithm to the Newton type algorithms (gradient free, gradient based, using Hessian) in HW4, in terms of the stability, convergence rate (how fast the algorithm is converging),  final objective value, total run time, derivation, and implementation efforts.</p>
+<h2 id="Q10.-(10-pts)-EM-vs-Newton-type-algorithms">Q10. (10 pts) EM vs Newton type algorithms<a class="anchor-link" href="#Q10.-(10-pts)-EM-vs-Newton-type-algorithms">&#182;</a></h2><p>Contrast EM algorithm to the Newton type algorithms (gradient free, gradient based, using Hessian) in HW5, in terms of the stability, convergence rate (how fast the algorithm is converging),  final objective value, total run time, derivation, and implementation efforts.</p>
 
 </div>
 </div>
