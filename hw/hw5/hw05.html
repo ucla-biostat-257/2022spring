@@ -13391,10 +13391,10 @@ where $\mathbf{r}_i = \mathbf{y}_i - \mathbf{X}_i \boldsymbol{\beta}$.</p>
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@assert</span> <span class="n">abs</span><span class="p">(</span><span class="n">logl</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mf">3256.1793358058258</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-4</span>
 <span class="nd">@assert</span> <span class="n">norm</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">∇β</span> <span class="o">-</span> <span class="p">[</span><span class="mf">0.26698108057144054</span><span class="p">,</span> <span class="mf">41.61418337067327</span><span class="p">,</span> 
         <span class="o">-</span><span class="mf">34.34664962312689</span><span class="p">,</span> <span class="mf">36.10898510707527</span><span class="p">,</span> <span class="mf">27.913948208793144</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1e-4</span>
-<span class="nd">@assert</span> <span class="n">norm</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">∇Σ</span> <span class="o">-</span> 
-    <span class="p">[</span><span class="o">-</span><span class="mf">0.9464482950697888</span> <span class="mf">0.057792444809492895</span> <span class="o">-</span><span class="mf">0.30244127639188767</span><span class="p">;</span> 
-        <span class="mf">0.057792444809492895</span> <span class="o">-</span><span class="mf">1.00087164917123</span> <span class="mf">0.2845116557144694</span><span class="p">;</span> 
-        <span class="o">-</span><span class="mf">0.30244127639188767</span> <span class="mf">0.2845116557144694</span> <span class="mf">1.170040927259726</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1e-4</span>
+<span class="c"># @assert norm(obs.∇Σ - </span>
+<span class="c">#     [-0.9464482950697888 0.057792444809492895 -0.30244127639188767; </span>
+<span class="c">#         0.057792444809492895 -1.00087164917123 0.2845116557144694; </span>
+<span class="c">#         -0.30244127639188767 0.2845116557144694 1.170040927259726]) &lt; 1e-4</span>
 <span class="nd">@assert</span> <span class="n">abs</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">∇σ²</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.6283715138412163</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-4</span>
 </pre></div>
 
@@ -13488,7 +13488,7 @@ where $\mathbf{r}_i = \mathbf{y}_i - \mathbf{X}_i \boldsymbol{\beta}$.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># define a type that holds LMM model (data + parameters)</span>
-<span class="k">struct</span> <span class="n">LmmModel</span><span class="p">{</span><span class="n">T</span> <span class="o">&lt;:</span> <span class="kt">AbstractFloat</span><span class="p">}</span> <span class="o">&lt;:</span> <span class="n">MathProgBase</span><span class="o">.</span><span class="n">AbstractNLPEvaluator</span>
+<span class="k">struct</span> <span class="n">LmmModel</span><span class="p">{</span><span class="n">T</span> <span class="o">&lt;:</span> <span class="kt">AbstractFloat</span><span class="p">}</span> <span class="o">&lt;:</span> <span class="n">MOI</span><span class="o">.</span><span class="n">AbstractNLPEvaluator</span>
     <span class="c"># data</span>
     <span class="n">data</span> <span class="o">::</span> <span class="kt">Vector</span><span class="p">{</span><span class="n">LmmObs</span><span class="p">{</span><span class="n">T</span><span class="p">}}</span>
     <span class="c"># parameters</span>
