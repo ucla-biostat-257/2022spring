@@ -13319,7 +13319,7 @@ where $\mathbf{r}_i = \mathbf{y}_i - \mathbf{X}_i \boldsymbol{\beta}$.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is a good idea to test correctness and efficiency of the single datum objective/gradient evaluator here. First generate the same data set as in HW2.</p>
+<p>It is a good idea to test correctness and efficiency of the single datum objective/gradient evaluator here. First generate the same data set as in <a href="https://ucla-biostat-257.github.io/2022spring/hw/hw3/hw03.html">HW3</a>.</p>
 
 </div>
 </div>
@@ -14253,7 +14253,7 @@ Derive the minimizer $\boldsymbol{\Sigma}^{(0)}$ (10 pts).</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q8.-(10-pts)-Gradient-free-vs-gradient-based-methods-vs-hessian-based-methods">Q8. (10 pts) Gradient free vs gradient-based methods vs hessian-based methods<a class="anchor-link" href="#Q8.-(10-pts)-Gradient-free-vs-gradient-based-methods-vs-hessian-based-methods">&#182;</a></h2><p>Advantage of using a modelling tool such as MathOptInterface.jl is that we can easily switch the backend solvers. For a research problem, we never know beforehand which solver works best.</p>
+<h2 id="Q8.-(10-pts)-Gradient-free-vs-gradient-based-methods">Q8. (10 pts) Gradient free vs gradient-based methods<a class="anchor-link" href="#Q8.-(10-pts)-Gradient-free-vs-gradient-based-methods">&#182;</a></h2><p>Advantage of using a modelling tool such as MathOptInterface.jl is that we can easily switch the backend solvers. For a research problem, we never know beforehand which solver works best.</p>
 <p>Try different solvers in the NLopt.jl and Ipopt.jl packages. Compare the results in terms of run times (the shorter the better), objective values at solution (the larger the better), and gradients at solution (closer to 0 the better). Summarize what you find.</p>
 <p>See this <a href="https://nlopt.readthedocs.io/en/latest/NLopt_Algorithms/">page</a> for the descriptions of algorithms in NLopt.</p>
 <p>Documentation for the Ipopt can be found <a href="https://coin-or.github.io/Ipopt/">here</a>.</p>
