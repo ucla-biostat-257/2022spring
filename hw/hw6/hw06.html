@@ -13521,7 +13521,7 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q4.-LmmModel-type">Q4. LmmModel type<a class="anchor-link" href="#Q4.-LmmModel-type">&#182;</a></h2><p>We modify the <code>LmmModel</code> type in HW4 to hold all data points, model parameters, and intermediate arrays.</p>
+<h2 id="Q4.-LmmModel-type">Q4. LmmModel type<a class="anchor-link" href="#Q4.-LmmModel-type">&#182;</a></h2><p>We modify the <code>LmmModel</code> type in HW5 to hold all data points, model parameters, and intermediate arrays.</p>
 
 </div>
 </div>
@@ -13630,7 +13630,7 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q6.-(30-pts)-Test-data">Q6. (30 pts) Test data<a class="anchor-link" href="#Q6.-(30-pts)-Test-data">&#182;</a></h2><p>Let's generate a fake longitudinal data set (same as HW4) to test our algorithm.</p>
+<h2 id="Q6.-(30-pts)-Test-data">Q6. (30 pts) Test data<a class="anchor-link" href="#Q6.-(30-pts)-Test-data">&#182;</a></h2><p>Let's generate a fake longitudinal data set (same as HW5) to test our algorithm.</p>
 
 </div>
 </div>
@@ -13805,7 +13805,7 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q7.-Starting-point">Q7. Starting point<a class="anchor-link" href="#Q7.-Starting-point">&#182;</a></h2><p>We use the same least squares estimates as in HW4 as starting point.</p>
+<h2 id="Q7.-Starting-point">Q7. Starting point<a class="anchor-link" href="#Q7.-Starting-point">&#182;</a></h2><p>We use the same least squares estimates as in HW5 as starting point.</p>
 
 </div>
 </div>
@@ -14005,7 +14005,7 @@ $$</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># objective at solution should be close enough to the optimal</span>
-<span class="nd">@assert</span> <span class="n">update_em!</span><span class="p">(</span><span class="n">lmm</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">2.83426451e6</span>
+<span class="nd">@assert</span> <span class="n">update_em!</span><span class="p">(</span><span class="n">lmm</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">2.840059e6</span>
 </pre></div>
 
     </div>
